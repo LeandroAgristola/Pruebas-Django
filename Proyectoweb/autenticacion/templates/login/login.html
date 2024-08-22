@@ -1,0 +1,37 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %} <!--Cargamos las etiquetas del paquete cripy forms-->
+
+{% block content %}
+
+<div class="contenedorFormulario" style="color: white;">
+    <form method="post" action="">
+    
+        {% csrf_token %}
+    
+        <div style="width: 75%; margin:auto;">
+
+            {% if messages %} <!--Si hay un error en la carga del formulario, recorremos los mensajes de error y mostramos el error correspondiente-->
+
+                {% for mensaje in messages %}
+ 
+                    <span class="alert alert-{{mensaje.tags}}">{{mensaje}}</span> <!--Le damos estilo al mensaje de error-->
+
+                {% endfor %}
+
+            {% endif %}
+
+            <br>
+            <br>
+            
+            {{form|crispy}}
+    
+            <button type="submit" class="btn btn-success">Login</button> 
+            
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Pedido</title>
+</head>
+<body>
+    <p>Hola {{ nombreusuario }},</p>
+    <p>Gracias por tu pedido. Aquí tienes los detalles:</p>
+
+    <ul>
+        {% for key, value in carro.items %}
+        <li>{{ value.nombre }} - Cantidad: {{ value.cantidad }} - Precio: {{ value.precio }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Total: {{ Pedido.total }}</p>
+</body>
+</html>
