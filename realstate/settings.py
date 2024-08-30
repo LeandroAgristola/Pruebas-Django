@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+import os
+
+from django.contrib.messages import constants as mensajes_de_error # para trabajar con msj de error 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'crispy_bootstrap5',
     'realestateapp',
 ]
 
@@ -105,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ES'
 
 TIME_ZONE = 'UTC'
 
@@ -117,9 +122,48 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# configuracion de email:
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # Configuración del backend de email de Django
+EMAIL_HOST = "smtp-mail.outlook.com"  # Host SMTP de Hotmail (Outlook)
+EMAIL_USE_TLS = True  # Utilizar TLS
+EMAIL_PORT = 587  # Puerto SMTP para TLS
+EMAIL_HOST_USER='leo_91_166@hotmail.com' #direccion de correo electronico
+EMAIL_HOST_PASSWORD='paozgadndgittrdq' #agregamos la contraseña de nuestro correo 
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5" #importamos crispy para trabajar con formularios 
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+#cargamos los tipos de msj de error
+
+MESSAGE_TAGS={
+    mensajes_de_error.DEBUG:'deburg',
+    mensajes_de_error.INFO:'info',
+    mensajes_de_error.SUCCESS:'success',
+    mensajes_de_error.WARNING:'warning',
+    mensajes_de_error.ERROR:'danger',
+}
+
