@@ -78,58 +78,48 @@ p { font-size: 1.25em; }
 #hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 /* Tarjetas en el carrusel */
-#hero .tarjeta {
-    background-position: center;
-    background-size: cover;
-    padding: 15px;
-    border-radius: 10px;
-    
+#hero .carousel-inner {
+    justify-content: center;
+    padding-bottom: 50px;
 }
 
-.tarjeta .card-body {
-    background: rgba(0, 0, 0, 0.466);
-    color: white;
-}
-
-.tarjeta .card-body p {
-    height: 150px;
-}
-
-
-
-/* Ajustes para el carrusel de tarjetas */
 #hero .carousel-item {
-    display: flex;
     justify-content: center;
 }
 
-#hero .tarjeta {
-    margin: 0 15px; /* Espaciado entre tarjetas */
-    background: rgba(0, 0, 0, 0.466);
-    height: 550px;
+#hero .card {
+    border-radius: 10px;
+    height: 600px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.700);
+    color: white;
+    background-position: center;
+    background-size: cover;
+    padding: 15px;
+    margin: auto;
 }
 
 #hero .card-img-top {
-    height: 200px;
+    height: 250px;
     object-fit: cover;
-
 }
 
-.tarjeta .btn {
-    font-size: 1.2em;
+
+.card .btn {
+    font-size: 1em;
     padding: 10px 20px;
     background-color: rgb(48, 48, 119);
     border-color: rgb(48, 48, 119);
 }
 
-.tarjeta .btn:hover {
+.card .btn:hover {
     background-color:rgb(89, 89, 247);
     border-color:rgb(89, 89, 247);
 }
-
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {

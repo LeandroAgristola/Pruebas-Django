@@ -1,90 +1,21 @@
 
 
-* {
-    box-sizing: border-box; /**esta propiedad evita que los contenedores crescan mas de lo que se indica**/
-
-}
-html {
-    scroll-behavior: smooth; /**estilo suave al moverte desde los menus**/
-}
-
-body {
-    font-family: 'Lato', sans-serif; /** establecemos la fuente**/ 
-    margin: 0; /** eliminamos el margen del body que viene por defecto**/ 
-    
-}
 
 
 
-/**ESTILOS PARA LA CLASE CONTENEDOR**/
-.contenedor{
-    max-width: 1400px; /**centra el texto a medida que la pagina se agranda **/
-    margin: auto;
-}
 
 
-/**ESTILOS PARA EL HEADER**/
-
-header{
-    background-color: rgb(245, 245, 245); /**color del fondo del header**/
-}
 
 
-header .logo{ /**estilo para el logo**/
-    margin: 0; /**reseteamos el margen del logo**/
-    padding: 25px 30px; /**aplica arriba y a los costados**/
-    font-weight: bold; /**negrita en el texto del logo**/
-    color: rgb(48, 48, 119); /***color del logo**/
-    font-size: 2em; /**tamaña del texto del logo**/
-    display: flex; 
-    flex-direction: column; /**aliena los items en columna**/
-    align-items: center; /**Centra los items**/
 
-}
 
-header .logo p {
-    margin: 0px; /** eliminamos el margen por defecto del parrafo**/
-}
 
-header .contenedor{ /**estilo para todo el contenedor header donde esta el logo con la imagen y el texto ; y el nav**/
-    display: flex; 
-    flex-direction: column; /**aliena los items en columna**/
-    align-items: center; /**Centra los items**/
 
-}
 
-header nav{ /**estilo para el menu principal**/
-    display: flex; /**posicionamiento del menu**/
-    flex-direction: column; /**ordena los items en columnas**/
-    text-align: center; /** alinea el texto del menu**/
-    padding-bottom: 25px; /**relleno del boton**/
-    width: 100%;
-}
 
-header a { /**estilo para el texto del menu**/
-    font-size: 1.5em; /**tamaño del texto de la barra de navegacion**/
-    padding: 15px 10px; /**rellen de los botones del menu**/
-    text-decoration: none; /**elimina la linea de los link**/
-    font-weight: bold; /**establece el texto en negrita**/
-    color: black; /**color del texto del menu**/
-    transition-property: all; /**transicion de entrada**/
-	transition-duration: 0.5s; /**transicion de entrada**/
-}
 
-header a:hover { /**estilo para los link del header**/
-    font-size: 1.5em;
-    color:rgb(89, 89, 247); /**color del texto del menu al interactuar**/
-    padding: 18px; /**colocamos el mismo paddin que en "a" para q no se mueva el elemento**/
-    background-color: rgba(0,0,0,0.08); /**color del dondo de los menu al interactuar**/
-    transition-property: all; /**transicion de salida*/
-	transition-duration: 0.5s; /**transicion de salida*/
-}
-header .logo img { /**aplicamos estilo a la imagen del logo**/
-    height: 80px;
-    width: 120px;
 
-}
-/** ESTILO PARA EL BANNER PRINCIPAL**/
+
 
 #hero  {
     display: flex;

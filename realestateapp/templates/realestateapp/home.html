@@ -47,61 +47,75 @@
 		<section id="hero"> <!--banner principal-->
 			<div class="container-fluid">
 				<h1>Nuestros Desarrollos</h1>  <!-- Texto central del banner principal-->
-		
-				<!-- Carrusel de tarjetas -->
-				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-					<div class="carousel-inner">
-	
-						<!-- Slide con 3 tarjetas -->
-						<div class="carousel-item">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="card tarjeta">
-										<img src="/static/img/vivienda.jpg" class="card-img-top" alt="Desarrollo 1">
-										<div class="card-body">
-											<h5 class="card-title">Desarrollo 4</h5>
-											<p class="card-text">Descripción del desarrollo 4.</p>
-											<a href="/static/pdf/desarrollo4.pdf" class="btn btn-primary">Brochure Paper</a>
-										</div>
+				<div class="container">
+					<div class="carousel slide" id="carousel1" data-bs-ride="carousel"> <!--Establecemos la clase css y Js para generar el carrusel-->
+						<ul class="carousel-indicators" style="list-style-type:none;"> <!--lista de items (crea rectangulos abajo de cada imagen) agramos el style para que oculete los indicadores de la lista-->
+							<li data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carousel1" data-bs-slide-to="1"></li>
+							<li data-bs-target="#carousel1" data-bs-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner"> <!--contenedor donde van a estar cada imagen de carrusel-->
+
+							<div class="carousel-item active"> <!--establecemos este item como activo, asi se muestra ni bien carga la pagina-->
+
+								<div class="card">
+									<img class="card-img-top" src="/static/img/vivienda.jpg" alt=""> 
+									<div class="card-body">
+										<h4 class="card.title">Titulo de la tarjeta</h4>
+										<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ullam fuga fugiat, labore, cupiditate accusantium sed harum delectus consequuntur placeat hic ut optio nobis ad qui eos? Molestias, doloribus quasi.</p>
+									</div>
+									<div class="card-footer">
+										<a href="#" class="btn btn-primary">Ver mas...</a> <!--Biton de la parte inferior de la tarjeta-->
 									</div>
 								</div>
-								<div class="col-md-4">
-									<div class="card tarjeta">
-										<img src="/static/img/vivienda.jpg" class="card-img-top" alt="Desarrollo 2">
-										<div class="card-body">
-											<h5 class="card-title">Desarrollo 5</h5>
-											<p class="card-text">Descripción del desarrollo 5.</p>
-											<a href="/static/pdf/desarrollo5.pdf" class="btn btn-primary">Brochure Paper</a>
-										</div>
+
+							</div>
+				
+							<div class="carousel-item"> <!--establecemos este item como activo, asi se muestra ni bien carga la pagina-->
+
+								<div class="card">
+									<img class="card-img-top" src="/static/img/industria.jpg" alt=""> 
+									<div class="card-body">
+										<h4 class="card.title">Titulo de la tarjeta</h4>
+										<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ullam fuga fugiat, labore, cupiditate accusantium sed harum delectus consequuntur placeat hic ut optio nobis ad qui eos? Molestias, doloribus quasi.</p>
+									</div>
+									<div class="card-footer">
+										<a href="#" class="btn btn-primary">Ver mas...</a> <!--Biton de la parte inferior de la tarjeta-->
 									</div>
 								</div>
-								<div class="col-md-4">
-									<div class="card tarjeta">
-										<img src="/static/img/vivienda.jpg" class="card-img-top" alt="Desarrollo 3">
-										<div class="card-body">
-											<h5 class="card-title">Desarrollo 6</h5>
-											<p class="card-text">Descripción del desarrollo 6.</p>
-											<a href="/static/pdf/desarrollo6.pdf" class="btn btn-primary">Brochure Paper</a>
-										</div>
+
+							</div>
+							
+							<div class="carousel-item "> <!--establecemos este item como activo, asi se muestra ni bien carga la pagina-->
+
+								<div class="card">
+									<img class="card-img-top" src="/static/img/edificio.jpg" alt=""> 
+									<div class="card-body">
+										<h4 class="card.title">Titulo de la tarjeta</h4>
+										<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ullam fuga fugiat, labore, cupiditate accusantium sed harum delectus consequuntur placeat hic ut optio nobis ad qui eos? Molestias, doloribus quasi.</p>
+									</div>
+									<div class="card-footer">
+										<a href="#" class="btn btn-primary">Ver mas...</a> <!--Biton de la parte inferior de la tarjeta-->
 									</div>
 								</div>
+
 							</div>
 						</div>
-		
+				
+						<a class="carousel-control-prev" href="#carousel1" data-bs-slide="prev"> <!--boton de next para el carrusel-->
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span> <!--Muestra el icono del boton -->
+							<span class="sr-only"></span> <!--texto al lado del icono del boton -->
+						</a>
+				
+						<a class="carousel-control-next" href="#carousel1" data-bs-slide="next"> <!--boton de previus para el carrusel-->
+							<span class="carousel-control-next-icon" aria-hidden="true"></span> <!--boton de previus para el carrusel-->
+							<span class="sr-only"></span> <!--texto al lado del icono del boton -->
+						</a>
 					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
 				</div>
-		
 			</div>
 		</section>
-
+	
 		<section id="nosotros"> <!--Seccion Nosotros-->
 			<div class="container-fluid">
 				<div class="videonosotros">
@@ -234,7 +248,6 @@
 				</div>
 			</div>
 		</footer>
-		<script src="/static/vendor/bootstrap/js/bootstrap.esm.min.js" type="text/javascript"></script>
 		<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 	</body>
