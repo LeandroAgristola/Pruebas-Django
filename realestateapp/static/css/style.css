@@ -15,7 +15,15 @@ body {
 h1 { font-size: 3.5em; }
 h2 { font-size: 2.7em; }
 h3 { font-size: 2em; }
-p { font-size: 1.25em; }
+p { font-size: 1.1em; }
+
+.color-acento { color:rgb(89, 89, 247);} /**Estilo de los textos diferentes**/
+
+.container{
+    margin-top: 100px;
+    height: calc(100vh - 100px);
+    padding: 0;
+}
 
 /* Header */
 .logo-img {
@@ -63,8 +71,6 @@ p { font-size: 1.25em; }
 
 /* Hero */
 #hero {
-    margin-top: 70px;
-    height: calc(100vh - 70px);
     background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/img/hero.jpg');
     background-size: cover;
     background-position: center;
@@ -82,6 +88,7 @@ p { font-size: 1.25em; }
 }
 
 /* Tarjetas en el carrusel */
+
 #hero .carousel-inner {
     justify-content: center;
     padding-bottom: 50px;
@@ -109,14 +116,14 @@ p { font-size: 1.25em; }
 }
 
 
-.card .btn {
+#hero .card .btn {
     font-size: 1em;
     padding: 10px 20px;
     background-color: rgb(48, 48, 119);
     border-color: rgb(48, 48, 119);
 }
 
-.card .btn:hover {
+#hero .card .btn:hover {
     background-color:rgb(89, 89, 247);
     border-color:rgb(89, 89, 247);
 }
@@ -126,3 +133,85 @@ p { font-size: 1.25em; }
     width: 70px; /* Ajusta el tamaño a tu gusto */
     height: 70px; /* Ajusta el tamaño a tu gusto */
 }
+
+/* Estilo específico para la sección "Nosotros" */
+
+#nosotros {
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+.textonosotros {
+    text-align: left;
+    color: #000;
+}
+
+/* Estilo específico para la sección "Serie" */
+
+#serie {
+    background-color: rgb(30, 30, 30);
+    color: white; /* Color del texto en la tarjeta */
+}
+
+#serie h2 {
+    margin-top: 0;
+}
+
+#serie .card {
+    border: none; /* Elimina el borde predeterminado de las tarjetas */
+    height: 100%; /* Hace que la tarjeta ocupe todo el alto del contenedor */
+    display: flex;
+    flex-direction: column; /* Alinea el contenido de la tarjeta en una columna */
+}
+
+#serie .card-img-top {
+    height: 180px; /* Ajusta la altura de las imágenes de las tarjetas */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+#serie .card-body {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo de la tarjeta con opacidad */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Asegura que el cuerpo de la tarjeta ocupe el espacio disponible */
+    justify-content: space-between; /* Empuja el contenido hacia los extremos */
+    padding: 20px;
+}
+
+#serie .card .btn {
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: rgb(48, 48, 119);
+    border-color: rgb(48, 48, 119);
+    margin-top: auto; /* Empuja el botón al final del card-body */
+}
+
+#serie .card .btn:hover {
+    background-color: rgb(89, 89, 247);
+    border-color: rgb(89, 89, 247);
+}
+
+/* Estilo específico para la sección "contacto" */
+
+#contacto {
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+/* Estilo específico para la sección "ubicacion" */
+
+#ubicacion {
+    background-color: rgb(30, 30, 30);
+    color: white;
+
+}
+
+#footer {
+    background-color: #ffffff; /* Fondo blanco */
+    color:black;
+
+}
+
+
+
+
+

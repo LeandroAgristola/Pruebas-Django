@@ -18,7 +18,7 @@
 	<body>
 
 		<header id="home" class="fixed-top custom-header">
-			<div class="container">
+			<div class="container" style="height: 100px; margin-top: 0px;">
 				<div class="row align-items-center">
 					<div class="col-md-3 d-flex align-items-center">
 						<img src="static/logo/logo.png" alt="logo" class="logo-img me-2">
@@ -45,7 +45,7 @@
 		</header>
 
 		<section id="hero"> <!--banner principal-->
-			<div class="container-fluid">
+			<div class="container">
 				<h1>Nuestros Desarrollos</h1>  <!-- Texto central del banner principal-->
 				<div class="container">
 					<div class="carousel slide" id="carousel1" data-bs-ride="carousel"> <!--Establecemos la clase css y Js para generar el carrusel-->
@@ -116,61 +116,72 @@
 			</div>
 		</section>
 	
-		<section id="nosotros"> <!--Seccion Nosotros-->
-			<div class="container-fluid">
-				<div class="videonosotros">
-			 	 	<video autoplay muted loop=1>
-        				<source src="imagenes/video.mp4#t=12,63" type="video/mp4">
-       					Tu navegador no soporta la etiqueta de video.
-   					 </video>
-				
-				</div><!--Imagen de la seccion nosotros, la agregamos en CSS-->
-				<div class="textonosotros"> <!-- Contenedor de texto de la Seccion Nosotros -->
-					<h2>Sobre <br> <span class="color-acento">Realestate</span></h2> <!-- Titulo de la seccion Nosotros -->
-					<P> <!-- Texto de la seccion Nosotros-->
-						A través de la creación, inversión y gerenciamiento de las mismas, buscamos aportar valor agregado y seguir transformando las industrias a las que pertenecemos, 
-						mejorando la experiencia de los clientes, dándoles un servicio diferencial y generando retornos a nuestros  inversores. <br><br>
-						Fomentamos una cultura de ética, sin egos, sinérgica y profesional; de puertas abiertas, creativa y de 
-						pensamientos distintos; con plena confianza y delegación en nuestra gente; estableciendo relaciones verdaderas y de largo plazo.</P>
+		<section id="nosotros"> <!-- Sección Nosotros -->
+			<div id="nosotros-container" class="container bg-white d-flex align-items-center justify-content-center" >
+				<div class="row w-100">
+					<!-- Video a la izquierda -->
+					<div class="col-md-6 d-flex justify-content-center align-items-center">
+						<video id="myVideo" class="w-100" autoplay loop muted>
+							<source src="/static/img/Video.mp4" type="video/mp4">
+							Su navegador no soporta la etiqueta de vídeo.
+						</video>
+					</div>
+					<!-- Texto a la derecha -->
+					<div class="col-md-6 d-flex justify-content-center align-items-center">
+						<div class="textonosotros p-4">
+							<h2>Sobre <br> <span class="color-acento">Realestate</span></h2> <!-- Título de la sección Nosotros -->
+							<p>
+								A través de la creación, inversión y gerenciamiento de las mismas, buscamos aportar valor agregado y seguir transformando las industrias a las que pertenecemos, 
+								mejorando la experiencia de los clientes, dándoles un servicio diferencial y generando retornos a nuestros inversores. <br><br>
+								Fomentamos una cultura de ética, sin egos, sinérgica y profesional; de puertas abiertas, creativa y de 
+								pensamientos distintos; con plena confianza y delegación en nuestra gente; estableciendo relaciones verdaderas y de largo plazo.
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="serie"><!--seccion de tarjetas-->
-			<div class="container-fluid">
-				<h2>Serie <span class="color-acento">Realestate</span></h2> <!--Titulo de la seccion de tarjetas -->
-					<div class="datos_empresa"> <!--Este div permite darle estilo al sub menu-->
-						<div class="submenu"><!--tarjeta 1-->
-							<h3>Viviendas</h3> <!-- Tarjeta viviendas-->
-							<p>Un producto único, que busca generar una experiencia diferente en un entorno de disfrute, contención y tranquilidad, 
-								inmerso en la naturaleza. <br>
-								Con unidades que se entregan totalmente decoradas y equipadas, con los más completos amenities y servicios, 
-								y en entornos que invitan a respirar naturaleza, disfrutar es el único resultado posible.
-							</p>
-								<a href="viviendasmobile.html"><button>+ info</button></a>
-						</div>
-						<div class="submenu"><!--tarjeta Edificios-->
-							<h3>Edificios</h3>
-							<p>Desarrollamos Edificio residencial Premium exclusivos. Ofrecemos la posibilidad de acceder a unidades en lista cero (al costo): 
-								a precio cerrado, sin ajustes CAC, sin comisiones inmobiliarias. Obra de bajo riesgo constructivo y financiero, con tiempos de obra cortos por 
-								contar con proyecto ya aprobado.
-							</p>
-								<a href="edificiosmobile.html"><button>+ info</button></a>
-						</div>
-						<div class="submenu">
-							<h3>Industria</h3><!--tarjeta industrias-->
-							<p>Somos especialistas en inmuebles industriales y contamos con un equipo de profesionales en el desarrollo y planificación de locaciones industriales
-								Aplicamos tecnologías de última generación, para cumplir con lo más alto estándares en seguridad y cuidado del medio ambiente. 
-			
-							</p>
-								<a href="industriasmobile.html"><button>+ info</button></a>
+		<section id="serie" class="bg-dark text-white text-center py-5 ">
+			<div class="container">
+				<h2 class="mb-4">Serie <span class="color-acento">Realestate</span></h2>
+				<div class="row justify-content-center g-4">
+					<div class="col-lg-4 col-md-6">
+						<div class="card bg-dark text-white">
+							<img src="/static/img/vivienda.jpg" class="card-img-top" alt="Viviendas">
+							<div class="card-body d-flex flex-column text-center">
+								<h3 class="card-title">Viviendas</h3>
+								<p class="card-text d-none d-md-block">Un producto único, que busca generar una experiencia diferente en un entorno de disfrute, contención y tranquilidad, inmerso en la naturaleza. <br> Con unidades que se entregan totalmente decoradas y equipadas, con los más completos amenities y servicios, y en entornos que invitan a respirar naturaleza, disfrutar es el único resultado posible.</p>
+								<a href="viviendasmobile.html" class="btn btn-light mt-3 ">+ info</a>
+							</div>
 						</div>
 					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card bg-dark text-white">
+							<img src="/static/img/edificio.jpg" class="card-img-top" alt="Edificios">
+							<div class="card-body d-flex flex-column text-center">
+								<h3 class="card-title">Edificios</h3>
+								<p class="card-text d-none d-md-block">Desarrollamos Edificio residencial Premium exclusivos. Ofrecemos la posibilidad de acceder a unidades en lista cero (al costo): a precio cerrado, sin ajustes CAC, sin comisiones inmobiliarias. Obra de bajo riesgo constructivo y financiero, con tiempos de obra cortos por contar con proyecto ya aprobado.</p>
+								<a href="edificiosmobile.html" class="btn btn-light mt-3 ">+ info</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card bg-dark text-white">
+							<img src="/static/img/industria.jpg" class="card-img-top" alt="Industria">
+							<div class="card-body d-flex flex-column text-center">
+								<h3 class="card-title">Industria</h3>
+								<p class="card-text d-none d-md-block">Somos especialistas en inmuebles industriales y contamos con un equipo de profesionales en el desarrollo y planificación de locaciones industriales. Aplicamos tecnologías de última generación, para cumplir con lo más alto estándares en seguridad y cuidado del medio ambiente.</p>
+								<a href="industriasmobile.html" class="btn btn-light mt-3">+ info</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<section id="contacto"><!--Seccion de formulario de contacto-->
-			<div class="container-fluid"><!-- Contenedor general Titulo/formulario-imagen-->
+			<div class="container"><!-- Contenedor general Titulo/formulario-imagen-->
 				<div> <!-- Contenedor de titulo-->
 					<h2>Contacto</h2>
 		
@@ -216,7 +227,7 @@
 		</section>
 
 		<section id="ubicacion"> <!-- Seccion de Iframe Google Maps-->
-			<div class="container-fluid">
+			<div class="container">
 				<h2>Ubicacion</h2> <!-- TiTulo-->
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d817.8500541816977!2d-57.953874576704685!3d-34.921498429018776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62e3fc93575%3A0x6ffaec3bf616e000!2sPlaza%20Moreno!5e0!3m2!1ses-419!2sar!4v1695515733925!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
@@ -249,6 +260,7 @@
 			</div>
 		</footer>
 		<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+		<script src="/static/js/video-control.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 	</body>
 </html>
