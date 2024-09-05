@@ -21,8 +21,8 @@
 			<div class="container" style="height: 100px; margin-top: 0px;">
 				<div class="row align-items-center">
 					<div class="col-md-3 d-flex align-items-center">
-						<img src="static/logo/logo.png" alt="logo" class="logo-img me-2">
-						<p class="mb-0 logo-text">Realestate</p>
+						<a href="#hero"><img src="static/logo/logo.png" alt="logo" class="logo-img me-2"></a>
+						<a href="#hero"><p class="mb-0 logo-text">Realestate</p></a>
 					</div>
 					<div class="col-md-9">
 						<nav class="navbar navbar-expand-md navbar-dark">
@@ -142,8 +142,8 @@
 			</div>
 		</section>
 
-		<section id="serie" class="bg-dark text-white text-center py-5 ">
-			<div class="container">
+		<section id="serie">
+			<div class="container text-center py-5 ">
 				<h2 class="mb-4">Serie <span class="color-acento">Realestate</span></h2>
 				<div class="row justify-content-center g-4">
 					<div class="col-lg-4 col-md-6">
@@ -180,48 +180,49 @@
 			</div>
 		</section>
 
-		<section id="contacto"><!--Seccion de formulario de contacto-->
-			<div class="container"><!-- Contenedor general Titulo/formulario-imagen-->
-				<div> <!-- Contenedor de titulo-->
-					<h2>Contacto</h2>
-		
-				</div>
-				<div class="contenedorform"> <!-- Contenedor Formualario e imagen -->
-					<div class="formulario"> <!--Contenedor Formulario -->
-						<form name="contacto" autocomplete="on" method="post" onsubmit="return validarFormulario();">
-							
-							<p>
-							<label for="nombre">Nombre</label>
-							<br>
-							<input type="text" name="nombre" id="nombre" placeholder="Juan"  >
-							</p>
-							
-							<p>
-							<label for="apellido"> Apellido</label>
-							<br>
-							<input type="text" name="apellido" id="apellido" placeholder="Perez"  >
-							</p>
-							
-							<p>
-							<label for="telefono"> Telefono </label>
-							<br>
-							<input type="tel" name="telefono" id="telefono" placeholder="0115345456" >
-							</p>
-
-							<p>
-							<label for="email"> Email </label>
-							<br>
-							<input type="email" name="email" id="email" placeholder="ejemplo@email.com" >
-							</p>
-							
-							<div class="botones">
-								<input type="submit" value="Enviar">	
-								<input type="reset" value="Cancelar">
+		<section id="contacto" class="py-5">
+			<div class="container">
+				<div class="row">
+					<!-- Formulario a la izquierda -->
+					<div class="col-md-6">
+						<h2>Contacto</h2>
+						<form method="post" autocomplete="on">
+							<!-- Nombre -->
+							<div class="mb-3">
+								<label for="nombre" class="form-label">Nombre</label>
+								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Juan">
+							</div>
+							<!-- Apellido -->
+							<div class="mb-3">
+								<label for="apellido" class="form-label">Apellido</label>
+								<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Perez">
+							</div>
+							<!-- Teléfono -->
+							<div class="mb-3">
+								<label for="telefono" class="form-label">Teléfono</label>
+								<input type="tel" class="form-control" id="telefono" name="telefono" placeholder="0115345456">
+							</div>
+							<!-- Email -->
+							<div class="mb-3">
+								<label for="email" class="form-label">Email</label>
+								<input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@email.com">
+							</div>
+							<!-- Cuadro de texto para consulta -->
+							<div class="mb-3">
+								<label for="consulta" class="form-label">Consulta</label>
+								<textarea class="form-control" id="consulta" name="consulta" rows="4" placeholder="Escribe tu consulta aquí"></textarea>
+							</div>
+							<!-- Botones -->
+							<div>
+								<button type="submit" class="btn btn-primary">Enviar</button>
+								<button type="reset" class="btn btn-secondary">Cancelar</button>
 							</div>
 						</form>
 					</div>
-				
-					<div class="imgcontacto"></div><!--Imagen telefonista-->
+					<!-- Imagen a la derecha -->
+					<div class="col-md-6 d-flex justify-content-center align-items-center">
+						<img src="static/img/contacto.jpg" alt="Imagen de contacto" class="img-fluid">
+					</div>
 				</div>
 			</div>
 		</section>
@@ -233,29 +234,30 @@
 			</div>
 		</section> <!-- Mapa -->
 		
-		<footer> <!-- Parte de contactos-->
-			<div class="container-fluid"><!--Contendor del copyright-->
-				<div class="cajadatos">
-					<div class="datos"> <!--Instagram -->
-						<i class="fa-brands fa-square-instagram"></i> <a href="https://www.instagram.com/realestate/?hl=es" target="_blank">@reakestate</a>
-
-					</div>
-					<div class="datos"> <!--Whatsapp -->
-						<i class="fa-solid fa-phone"></i><a href="https://api.whatsapp.com/send?phone=541143214321" target="_blank">1143214321</a>
-						
-					</div>
-					<div class="datos"> <!-- Mail -->
-						<i class="fa-solid fa-envelope"></i> <a href="mailto:consultas@realestate.com" target="_blank">consultas@realestate.com</a>
-						
-					</div>
-					<div class="datos"> <!-- Localizacion -->
-						<i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/7smjejBQubtxXAZKA" target="_blank">Calle 14 N°12, La Plata, Buenos aires </a>
-						
+		<footer class="bg-light text-dark py-2"> <!-- Fondo y padding del footer -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col d-flex justify-content-around mb-2">
+						<div class="d-flex align-items-center">
+							<i class="fa-brands fa-square-instagram me-2"></i>
+							<a href="https://www.instagram.com/realestate/?hl=es" target="_blank">@reakestate</a>
+						</div>
+						<div class="d-flex align-items-center">
+							<i class="fa-solid fa-phone me-2"></i>
+							<a href="https://api.whatsapp.com/send?phone=541143214321" target="_blank">1143214321</a>
+						</div>
+						<div class="d-flex align-items-center">
+							<i class="fa-solid fa-envelope me-2"></i>
+							<a href="mailto:consultas@realestate.com" target="_blank">consultas@realestate.com</a>
+						</div>
+						<div class="d-flex align-items-center">
+							<i class="fa-solid fa-location-dot me-2"></i>
+							<a href="https://maps.app.goo.gl/7smjejBQubtxXAZKA" target="_blank">Calle 14 N°12, La Plata, Buenos aires</a>
+						</div>
 					</div>
 				</div>
-				<div class="copy"> <!-- Seccion Copy -->
-					<p>&copy;Mi empresa 2023</p> <!--Etiqueta para agregar un copyright-->
-
+				<div class="text-end">
+					<p class="mb-0">&copy; Mi empresa 2023</p>
 				</div>
 			</div>
 		</footer>
