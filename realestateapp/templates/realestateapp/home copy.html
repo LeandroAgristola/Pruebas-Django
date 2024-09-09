@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="es-ES"> <!--...-->
 		<head> <!--Metadatos OBLIGATORIA-->
@@ -45,42 +44,72 @@
 			</div>
 		</header>
 
-		<section id="hero">
+		<section id="hero"> <!--banner principal-->
 			<div class="container">
-				<h1>Nuestros Desarrollos</h1>
+				<h1>Nuestros Desarrollos</h1>  <!-- Texto central del banner principal-->
 				<div class="container">
-					<div class="carousel slide" id="carousel1" data-bs-ride="carousel">
-						<ul class="carousel-indicators" style="list-style-type:none;">
-							{% for desarrollo in desarrollos %}
-								<li data-bs-target="#carousel1" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}"></li>
-							{% endfor %}
+					<div class="carousel slide" id="carousel1" data-bs-ride="carousel"> <!--Establecemos la clase css y Js para generar el carrusel-->
+						<ul class="carousel-indicators" style="list-style-type:none;"> <!--lista de items (crea rectangulos abajo de cada imagen) agramos el style para que oculete los indicadores de la lista-->
+							<li data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carousel1" data-bs-slide-to="1"></li>
+							<li data-bs-target="#carousel1" data-bs-slide-to="2"></li>
 						</ul>
-		
-						<div class="carousel-inner">
-							{% for desarrollo in desarrollos %}
-								<div class="carousel-item {% if forloop.first %}active{% endif %}">
-									<div class="card">
-										<img class="card-img-top" src="{{ desarrollo.imagen.url }}" alt="Imagen de {{ desarrollo.titulo }}">
-										<div class="card-body">
-											<h4 class="card-title">{{ desarrollo.titulo }}</h4>
-											<p class="card-text">{{ desarrollo.contenido }}</p>
-										</div>
-										<div class="card-footer">
-											<a href="{{ desarrollo.brochurePaper.url }}" target="_blank" class="btn btn-primary">Brochure Paper</a>
-										</div>
+						<div class="carousel-inner"> <!--contenedor donde van a estar cada imagen de carrusel-->
+
+							<div class="carousel-item active"> <!--establecemos este item como activo, asi se muestra ni bien carga la pagina-->
+
+								<div class="card">
+									<img class="card-img-top" src="/static/img/vivienda.jpg" alt=""> 
+									<div class="card-body">
+										<h4 class="card.title">Titulo de la tarjeta</h4>
+										<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ullam fuga fugiat, labore, cupiditate accusantium sed harum delectus consequuntur placeat hic ut optio nobis ad qui eos? Molestias, doloribus quasi.</p>
+									</div>
+									<div class="card-footer">
+										<a href="#" class="btn btn-primary">Brochure Paper</a> <!--Biton de la parte inferior de la tarjeta-->
 									</div>
 								</div>
-							{% endfor %}
+
+							</div>
+				
+							<div class="carousel-item"> <!--establecemos este item como activo, asi se muestra ni bien carga la pagina-->
+
+								<div class="card">
+									<img class="card-img-top" src="/static/img/industria.jpg" alt=""> 
+									<div class="card-body">
+										<h4 class="card.title">Titulo de la tarjeta</h4>
+										<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ullam fuga fugiat, labore, cupiditate accusantium sed harum delectus consequuntur placeat hic ut optio nobis ad qui eos? Molestias, doloribus quasi.</p>
+									</div>
+									<div class="card-footer">
+										<a href="#" class="btn btn-primary">Ver mas...</a> <!--Biton de la parte inferior de la tarjeta-->
+									</div>
+								</div>
+
+							</div>
+							
+							<div class="carousel-item "> <!--establecemos este item como activo, asi se muestra ni bien carga la pagina-->
+
+								<div class="card">
+									<img class="card-img-top" src="/static/img/edificio.jpg" alt=""> 
+									<div class="card-body">
+										<h4 class="card.title">Titulo de la tarjeta</h4>
+										<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ullam fuga fugiat, labore, cupiditate accusantium sed harum delectus consequuntur placeat hic ut optio nobis ad qui eos? Molestias, doloribus quasi.</p>
+									</div>
+									<div class="card-footer">
+										<a href="#" class="btn btn-primary">Ver mas...</a> <!--Biton de la parte inferior de la tarjeta-->
+									</div>
+								</div>
+
+							</div>
 						</div>
-		
-						<a class="carousel-control-prev" href="#carousel1" data-bs-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only"></span>
+				
+						<a class="carousel-control-prev" href="#carousel1" data-bs-slide="prev"> <!--boton de next para el carrusel-->
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span> <!--Muestra el icono del boton -->
+							<span class="sr-only"></span> <!--texto al lado del icono del boton -->
 						</a>
-		
-						<a class="carousel-control-next" href="#carousel1" data-bs-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only"></span>
+				
+						<a class="carousel-control-next" href="#carousel1" data-bs-slide="next"> <!--boton de previus para el carrusel-->
+							<span class="carousel-control-next-icon" aria-hidden="true"></span> <!--boton de previus para el carrusel-->
+							<span class="sr-only"></span> <!--texto al lado del icono del boton -->
 						</a>
 					</div>
 				</div>
