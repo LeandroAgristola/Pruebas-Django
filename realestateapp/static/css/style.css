@@ -206,7 +206,7 @@ section {
     background-color: #ffffff; /* Fondo blanco */   
 }
 
-#contacto .form-control:focus { /*cambiamos los coleres de los input al estar activos*/
+#contacto .form-control:focus { /* Cambiamos los colores de los input al estar activos */
     border-color: rgb(48, 48, 119) !important;
     box-shadow: 0 0 0 .2rem rgba(48, 48, 119, 0.25) !important;
 }
@@ -219,9 +219,10 @@ section {
 }
 
 #contacto .btn:hover {
-    background-color:rgb(89, 89, 247);
-    border-color:rgb(89, 89, 247);
+    background-color: rgb(89, 89, 247);
+    border-color: rgb(89, 89, 247);
 }
+
 
 /* Estilo específico para la sección "ubicacion" */
 

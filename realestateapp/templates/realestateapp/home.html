@@ -157,36 +157,26 @@
 					<!-- Formulario a la izquierda -->
 					<div class="col-md-6">
 						<h2>Contacto</h2>
-						<form method="post" autocomplete="on">
-							<!-- Nombre -->
-							<div class="mb-3">
-								<label for="nombre" class="form-label">Nombre</label>
-								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Juan">
-							</div>
-							<!-- Apellido -->
-							<div class="mb-3">
-								<label for="apellido" class="form-label">Apellido</label>
-								<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Perez">
-							</div>
-							<!-- Teléfono -->
-							<div class="mb-3">
-								<label for="telefono" class="form-label">Teléfono</label>
-								<input type="tel" class="form-control" id="telefono" name="telefono" placeholder="0115345456">
-							</div>
-							<!-- Email -->
-							<div class="mb-3">
-								<label for="email" class="form-label">Email</label>
-								<input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@email.com">
-							</div>
-							<!-- Cuadro de texto para consulta -->
-							<div class="mb-3">
-								<label for="consulta" class="form-label">Consulta</label>
-								<textarea class="form-control" id="consulta" name="consulta" rows="4" placeholder="Escribe tu consulta aquí"></textarea>
-							</div>
-							<!-- Botones -->
-							<div>
-								<button type="submit" class="btn btn-primary">Enviar</button>
-								<button type="reset" class="btn btn-secondary">Cancelar</button>
+						<form id="form-contacto" method="post" autocomplete="on">
+							{% csrf_token %}
+							{{ miformulario.non_field_errors }}
+
+							<!-- Recorrido por cada campo del formulario -->
+							{% for field in miformulario %}
+								<div class="mb-3">
+									<label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+									{{ field }}
+									{% if field.errors %}
+										<div class="alert alert-danger">
+											{{ field.errors }}
+										</div>
+									{% endif %}
+								</div>
+							{% endfor %}
+
+							<div class="d-flex align-items-center">
+								<button id="btn-enviar" type="submit" class="btn btn-primary">Enviar</button>
+								<button id="btn-cancelar" type="reset" class="btn btn-secondary ms-2">Cancelar</button>
 							</div>
 						</form>
 					</div>
@@ -198,6 +188,24 @@
 			</div>
 		</section>
 
+		<!-- Modal -->
+		<div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="mensajeModalLabel">Mensaje Enviado</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				Su mensaje ha sido enviado exitosamente.
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Ok</button>
+			</div>
+			</div>
+		</div>
+		</div>
+		
 		<section id="ubicacion"> <!-- Seccion de Iframe Google Maps-->
 			<div class="container">
 				<h2>Ubicacion</h2> <!-- TiTulo-->
@@ -233,7 +241,8 @@
 			</div>
 		</footer>
 		<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-		<script src="/static/js/video-control.js"></script>
+		<script src="/static/js/videoControl.js"></script>
+		<script src="/static/js/modalEnviar.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 	</body>
 </html>
