@@ -1,24 +1,66 @@
 document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('form-contacto');
-    
+    var loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+    var mensajeModal = new bootstrap.Modal(document.getElementById('mensajeModal'));
+
     if (form) {
         form.addEventListener('submit', function(event) {
-            // Verifica si el formulario es válido antes de mostrar el modal
-            if (form.checkValidity()) {
-                // Si el formulario es válido, mostrar el modal
-                event.preventDefault();  // Detener el envío para mostrar el modal
-                var mensajeModal = new bootstrap.Modal(document.getElementById('mensajeModal'));
-                mensajeModal.show();
+            event.preventDefault(); // Evitar el envío del formulario por defecto
 
-                // Enviar el formulario después de mostrar el modal
-                mensajeModal._element.addEventListener('hidden.bs.modal', function() {
-                    form.submit();  // Enviar el formulario una vez que se cierra el modal
-                });
-            } else {
-                // Si no es válido, evitar el envío y mostrar errores
-                event.preventDefault();
-                form.reportValidity();
-            }
+            var formData = new FormData(form);
+
+            // Limpiar mensajes de error anteriores
+            document.querySelectorAll('.alert.alert-danger').forEach(function(element) {
+                element.remove();
+            });
+
+            // Mostrar modal de carga
+            loadingModal.show();
+
+            fetch(window.location.href, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Ocultar modal de carga
+                loadingModal.hide();
+
+                if (data.status === 'ok') {
+                    // Mostrar modal de mensaje enviado
+                    mensajeModal.show();
+
+                    // Limpiar el formulario después de enviar
+                    form.reset();
+                } else if (data.status === 'invalid') {
+                    console.log('Errores de validación:', data.errors);
+                    
+                    // Mostrar errores en el formulario
+                    var errors = JSON.parse(data.errors);
+                    for (var field in errors) {
+                        var errorMessages = errors[field];
+                        var fieldElement = document.querySelector('[name=' + field + ']');
+                        if (fieldElement) {
+                            var errorElement = document.createElement('div');
+                            errorElement.className = 'alert alert-danger';
+                            errorMessages.forEach(function(error) {
+                                var errorText = document.createTextNode(error.message);
+                                errorElement.appendChild(errorText);
+                            });
+                            fieldElement.parentElement.appendChild(errorElement);
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                // Ocultar modal de carga en caso de error
+                loadingModal.hide();
+                console.error('Error al enviar el formulario:', error);
+            });
         });
     }
 });

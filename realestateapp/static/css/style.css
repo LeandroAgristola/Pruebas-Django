@@ -250,6 +250,29 @@ section {
     border-color: rgb(89, 89, 247);
 }
 
+/* Estilos para el spinner en el modal de carga */
+#loadingModal .spinner-border {
+    color: rgb(89, 89, 247); /* Color del spinner */
+}
+
+/* Estilos para el modal de "mensaje enviado" */
+#mensajeModal .modal-header, 
+#mensajeModal .modal-body, 
+#mensajeModal .modal-footer {
+    text-align: center;
+}
+
+#mensajeModal .modal-footer .btn {
+    background-color: rgb(48, 48, 119);
+    border-color: rgb(48, 48, 119);
+    width: 100px; /* Ajuste del tamaño del botón */
+}
+
+#mensajeModal .modal-footer .btn:hover {
+    background-color: rgb(89, 89, 247);
+    border-color: rgb(89, 89, 247);
+}
+
 /* Estilo específico para la sección "ubicacion" */
 
 #ubicacion {
@@ -304,6 +327,22 @@ footer .text-end {
 }
 
 
+/* Ajusta el tamaño del texto del mensaje de error */
+.alert-danger {
+    background-color: #f8d7da; /* Cambia el color de fondo del mensaje de error */
+    border-color: #f5c6cb; /* Cambia el color del borde */
+    color: #721c24; /* Cambia el color del texto */
+    height: 55px;
+}
+
+/* Ajusta el tamaño y estilo del texto dentro de la lista de errores */
+.alert-danger .errorlist li {
+    font-size: 15px; /* Tamaño del texto del mensaje de error */
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding-left: 0; /* Eliminar el margen izquierdo */
+}
+
+
 @media (max-width: 768px) {
 
     .container{
@@ -348,36 +387,20 @@ footer .text-end {
 
     .navbar-toggler-icon {
         background-image: url("/static/logo/barra-de-menu.png");
-        background-color: rgba(48, 48, 119, 0.2);
         height: 35px;
         width: 35px;
         border-radius: 15%;
 
     }
 
-    .navbar-toggler-icon:hover:active{
-        height: 38px;
-        width: 38px;
-        background-color: white;
-        box-shadow: 0 0 0 0.25rem rgba(89, 89, 247, 0.8); /* Cambia al color deseado */
-    }
-
     .navbar-toggler-icon:hover {
-        box-shadow: 0 0 0 0.25rem rgba(89, 89, 247, 0.5); /* Cambia al color deseado */
+        background-color: gray;
+
     }
 
     /* Seccion Hero*/
 
-    #hero h1 {    #serie .card {
-        width: 550px;
-        height: 150px; /* Hace que la tarjeta ocupe todo el alto del contenedor */
-    }
-…
-    #serie .card .btn:hover {
-        background-color: rgb(89, 89, 247);
-        border-color: rgb(89, 89, 247);
-    }
-
+    #hero h1 {    
         margin-top: 20px; /* Reduce el margen superior del título */
     }
 

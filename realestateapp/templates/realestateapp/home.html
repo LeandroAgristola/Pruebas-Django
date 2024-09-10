@@ -155,12 +155,12 @@
 			<div class="container">
 				<div class="row">
 					<!-- Formulario a la izquierda -->
+
 					<div class="col-md-6">
-						<h2>Contacto</h2>
 						<form id="form-contacto" method="post" autocomplete="on">
+							<h2>Contacto</h2>
 							{% csrf_token %}
 							{{ miformulario.non_field_errors }}
-
 							<!-- Recorrido por cada campo del formulario -->
 							{% for field in miformulario %}
 								<div class="mb-3">
@@ -188,22 +188,33 @@
 			</div>
 		</section>
 
-		<!-- Modal -->
-		<div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="mensajeModalLabel">Mensaje Enviado</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				Su mensaje ha sido enviado exitosamente.
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Ok</button>
-			</div>
+		<!-- Modal de carga -->
+		<div class="modal fade" id="loadingModal" tabindex="-1" aria-labelledby="loadingModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content" style="background-color: transparent; border: none;">
+					<div class="modal-body d-flex justify-content-center align-items-center" style="height: 100px;">
+						<div class="spinner-border" role="status"> <!-- Cambia el color aquí -->
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+
+		<!-- Modal de mensaje enviado -->
+		<div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered"> <!-- Centrado verticalmente -->
+				<div class="modal-content">
+					<div class="modal-header d-flex justify-content-center">
+						<h5 class="modal-title" id="mensajeModalLabel">Mensaje Enviado</h5>
+					</div>
+					<div class="modal-body d-flex justify-content-center">
+						Su mensaje ha sido enviado exitosamente.
+					</div>
+					<div class="modal-footer d-flex justify-content-center"> <!-- Botón centrado -->
+						<button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Ok</button>
+					</div>
+				</div>
+			</div>
 		</div>
 		
 		<section id="ubicacion"> <!-- Seccion de Iframe Google Maps-->
@@ -240,10 +251,11 @@
 				</div>
 			</div>
 		</footer>
+
+		<!-- Carga de scripts -->
 		<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 		<script src="/static/js/videoControl.js"></script>
 		<script src="/static/js/modalEnviar.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 	</body>
 </html>
-
