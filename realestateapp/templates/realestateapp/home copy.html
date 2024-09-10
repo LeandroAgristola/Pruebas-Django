@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es-ES"> <!--...-->
 		<head> <!--Metadatos OBLIGATORIA-->
@@ -44,72 +45,42 @@
 			</div>
 		</header>
 
-		<section id="hero"> <!--banner principal-->
+		<section id="hero">
 			<div class="container">
-				<h1>Nuestros Desarrollos</h1>  <!-- Texto central del banner principal-->
+				<h1>Nuestros Desarrollos</h1>
 				<div class="container">
-					<div class="carousel slide" id="carousel1" data-bs-ride="carousel"> <!--Establecemos la clase css y Js para generar el carrusel-->
-						<ul class="carousel-indicators" style="list-style-type:none;"> <!--lista de items (crea rectangulos abajo de cada imagen) agramos el style para que oculete los indicadores de la lista-->
-							<li data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></li>
-							<li data-bs-target="#carousel1" data-bs-slide-to="1"></li>
-							<li data-bs-target="#carousel1" data-bs-slide-to="2"></li>
+					<div class="carousel slide" id="carousel1" data-bs-ride="carousel">
+						<ul class="carousel-indicators" style="list-style-type:none;">
+							{% for desarrollo in desarrollos %}
+								<li data-bs-target="#carousel1" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}"></li>
+							{% endfor %}
 						</ul>
-						<div class="carousel-inner"> <!--contenedor donde van a estar cada imagen de carrusel-->
-
-							<div class="carousel-item active"> <!--establecemos este item como activo, asi se muestra ni bien carga la pagina-->
-
-								<div class="card">
-									<img class="card-img-top" src="/static/img/vivienda.jpg" alt=""> 
-									<div class="card-body">
-										<h4 class="card.title">Titulo de la tarjeta</h4>
-										<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ullam fuga fugiat, labore, cupiditate accusantium sed harum delectus consequuntur placeat hic ut optio nobis ad qui eos? Molestias, doloribus quasi.</p>
-									</div>
-									<div class="card-footer">
-										<a href="#" class="btn btn-primary">Brochure Paper</a> <!--Biton de la parte inferior de la tarjeta-->
-									</div>
-								</div>
-
-							</div>
-				
-							<div class="carousel-item"> <!--establecemos este item como activo, asi se muestra ni bien carga la pagina-->
-
-								<div class="card">
-									<img class="card-img-top" src="/static/img/industria.jpg" alt=""> 
-									<div class="card-body">
-										<h4 class="card.title">Titulo de la tarjeta</h4>
-										<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ullam fuga fugiat, labore, cupiditate accusantium sed harum delectus consequuntur placeat hic ut optio nobis ad qui eos? Molestias, doloribus quasi.</p>
-									</div>
-									<div class="card-footer">
-										<a href="#" class="btn btn-primary">Ver mas...</a> <!--Biton de la parte inferior de la tarjeta-->
+		
+						<div class="carousel-inner">
+							{% for desarrollo in desarrollos %}
+								<div class="carousel-item {% if forloop.first %}active{% endif %}">
+									<div class="card">
+										<img class="card-img-top" src="{{ desarrollo.imagen.url }}" alt="Imagen de {{ desarrollo.titulo }}">
+										<div class="card-body">
+											<h4 class="card-title">{{ desarrollo.titulo }}</h4>
+											<p class="card-text">{{ desarrollo.contenido }}</p>
+										</div>
+										<div class="card-footer">
+											<a href="{{ desarrollo.brochurePaper.url }}" target="_blank" class="btn btn-primary">Brochure Paper</a>
+										</div>
 									</div>
 								</div>
-
-							</div>
-							
-							<div class="carousel-item "> <!--establecemos este item como activo, asi se muestra ni bien carga la pagina-->
-
-								<div class="card">
-									<img class="card-img-top" src="/static/img/edificio.jpg" alt=""> 
-									<div class="card-body">
-										<h4 class="card.title">Titulo de la tarjeta</h4>
-										<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ullam fuga fugiat, labore, cupiditate accusantium sed harum delectus consequuntur placeat hic ut optio nobis ad qui eos? Molestias, doloribus quasi.</p>
-									</div>
-									<div class="card-footer">
-										<a href="#" class="btn btn-primary">Ver mas...</a> <!--Biton de la parte inferior de la tarjeta-->
-									</div>
-								</div>
-
-							</div>
+							{% endfor %}
 						</div>
-				
-						<a class="carousel-control-prev" href="#carousel1" data-bs-slide="prev"> <!--boton de next para el carrusel-->
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span> <!--Muestra el icono del boton -->
-							<span class="sr-only"></span> <!--texto al lado del icono del boton -->
+		
+						<a class="carousel-control-prev" href="#carousel1" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only"></span>
 						</a>
-				
-						<a class="carousel-control-next" href="#carousel1" data-bs-slide="next"> <!--boton de previus para el carrusel-->
-							<span class="carousel-control-next-icon" aria-hidden="true"></span> <!--boton de previus para el carrusel-->
-							<span class="sr-only"></span> <!--texto al lado del icono del boton -->
+		
+						<a class="carousel-control-next" href="#carousel1" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only"></span>
 						</a>
 					</div>
 				</div>
@@ -186,36 +157,26 @@
 					<!-- Formulario a la izquierda -->
 					<div class="col-md-6">
 						<h2>Contacto</h2>
-						<form method="post" autocomplete="on">
-							<!-- Nombre -->
-							<div class="mb-3">
-								<label for="nombre" class="form-label">Nombre</label>
-								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Juan">
-							</div>
-							<!-- Apellido -->
-							<div class="mb-3">
-								<label for="apellido" class="form-label">Apellido</label>
-								<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Perez">
-							</div>
-							<!-- Teléfono -->
-							<div class="mb-3">
-								<label for="telefono" class="form-label">Teléfono</label>
-								<input type="tel" class="form-control" id="telefono" name="telefono" placeholder="0115345456">
-							</div>
-							<!-- Email -->
-							<div class="mb-3">
-								<label for="email" class="form-label">Email</label>
-								<input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@email.com">
-							</div>
-							<!-- Cuadro de texto para consulta -->
-							<div class="mb-3">
-								<label for="consulta" class="form-label">Consulta</label>
-								<textarea class="form-control" id="consulta" name="consulta" rows="4" placeholder="Escribe tu consulta aquí"></textarea>
-							</div>
-							<!-- Botones -->
-							<div>
-								<button type="submit" class="btn btn-primary">Enviar</button>
-								<button type="reset" class="btn btn-secondary">Cancelar</button>
+						<form id="form-contacto" method="post" autocomplete="on">
+							{% csrf_token %}
+							{{ miformulario.non_field_errors }}
+
+							<!-- Recorrido por cada campo del formulario -->
+							{% for field in miformulario %}
+								<div class="mb-3">
+									<label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+									{{ field }}
+									{% if field.errors %}
+										<div class="alert alert-danger">
+											{{ field.errors }}
+										</div>
+									{% endif %}
+								</div>
+							{% endfor %}
+
+							<div class="d-flex align-items-center">
+								<button id="btn-enviar" type="submit" class="btn btn-primary">Enviar</button>
+								<button id="btn-cancelar" type="reset" class="btn btn-secondary ms-2">Cancelar</button>
 							</div>
 						</form>
 					</div>
@@ -227,6 +188,24 @@
 			</div>
 		</section>
 
+		<!-- Modal -->
+		<div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="mensajeModalLabel">Mensaje Enviado</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				Su mensaje ha sido enviado exitosamente.
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Ok</button>
+			</div>
+			</div>
+		</div>
+		</div>
+		
 		<section id="ubicacion"> <!-- Seccion de Iframe Google Maps-->
 			<div class="container">
 				<h2>Ubicacion</h2> <!-- TiTulo-->
@@ -262,7 +241,8 @@
 			</div>
 		</footer>
 		<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-		<script src="/static/js/video-control.js"></script>
+		<script src="/static/js/videoControl.js"></script>
+		<script src="/static/js/modalEnviar.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 	</body>
 </html>

@@ -27,12 +27,11 @@ a {text-decoration: none; } /* Elimina el subrayado */
     height: calc(100vh - 100px);
 }
 
-/* Header */
-
 section {
     scroll-margin-top: 100px; /* Altura del menú fijo */
 }
 
+/* Header */
 .logo-img {
     height: 80px;
     width: 120px;
@@ -75,6 +74,10 @@ section {
     padding: 15px 15px;
 }
 
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}
+
 
 /* Hero */
 #hero {
@@ -97,12 +100,10 @@ section {
 #hero .carousel-inner {
     justify-content: center;
     padding-bottom: 50px;
-    align-items: center;
 }
 
 #hero .carousel-item {
     justify-content: center;
-    align-items: center;
 }
 
 #hero .card {
@@ -152,43 +153,6 @@ section {
     color: #000;
 }
 
-/* Estilos para pantallas grandes */
-#nosotros {
-    background-color: #ffffff; /* Fondo blanco */
-}
-
-.textonosotros {
-    text-align: left;
-    color: #000;
-}
-
-/* Estilos para pantallas grandes */
-
-#nosotros {
-    background-color: #ffffff; /* Fondo blanco */
-}
-
-.textonosotros {
-    text-align: left;
-    color: #000;
-}
-
-#nosotros-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.row {
-    width: 100%;
-}
-
-.col-md-6 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* Estilo específico para la sección "Serie" */
 
 #serie {
@@ -224,7 +188,17 @@ section {
 }
 
 #serie .card .btn {
-    display: none;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: rgb(48, 48, 119);
+    border-color: rgb(48, 48, 119);
+    margin-top: auto; /* Empuja el botón al final del card-body */
+}
+
+#serie .card .btn:hover {
+    background-color: rgb(89, 89, 247);
+    border-color: rgb(89, 89, 247);
 }
 
 /* Estilo específico para la sección "contacto" */
@@ -250,11 +224,12 @@ section {
     border-color: rgb(89, 89, 247);
 }
 
+
 /* Estilo específico para la sección "ubicacion" */
 
 #ubicacion {
     background-color: rgb(30, 30, 30);
-    color: white  /* Hero */;
+    color: white;
     display: flex;
     flex-direction: column; /* Asegura que el contenido se alinee en columna */
     align-items: center; /* Centra horizontalmente el contenido */
@@ -265,7 +240,6 @@ section {
 }
 
 #ubicacion h2 {
-    margin-bottom: 20px; /* Reduce el margen inferior del título */
     margin-bottom: 20px; /* Reduce el margen inferior del título */
 }
 
@@ -304,180 +278,6 @@ footer .text-end {
 }
 
 
-@media (max-width: 768px) {
 
-    .container{
-        margin-top: 180px;
-        padding: 0;
-        height: calc(100vh - 180px);
-    }
-
-    /* Header */
-
-    section {
-        scroll-margin-top: 180px; /* Altura del menú fijo */
-    }
-
-    #home{
-        height: 180px;
-    }
-
-    .row .align-items-center {
-        margin: 0px;
-        padding: 0px;
-        height: 120px;
-        display: flex;
-        flex-direction: column;
-        align-items: center center;
-        align-content: center;
-    }
-
-    .logo-img {
-        height: 80px;
-        width: 120px;
-    }
-    
-    .logo-text {
-        color: rgb(48, 48, 119);
-        margin: 0;
-        padding: 0px;
-        font-weight: bold;
-        font-size: 2em;
-    
-    }
-
-    .navbar-toggler-icon {
-        background-image: url("/static/logo/barra-de-menu.png");
-        background-color: rgba(48, 48, 119, 0.2);
-        height: 35px;
-        width: 35px;
-        border-radius: 15%;
-
-    }
-
-    .navbar-toggler-icon:hover:active{
-        height: 38px;
-        width: 38px;
-        background-color: white;
-        box-shadow: 0 0 0 0.25rem rgba(89, 89, 247, 0.8); /* Cambia al color deseado */
-    }
-
-    .navbar-toggler-icon:hover {
-        box-shadow: 0 0 0 0.25rem rgba(89, 89, 247, 0.5); /* Cambia al color deseado */
-    }
-
-    /* Seccion Hero*/
-
-    #hero h1 {    #serie .card {
-        width: 550px;
-        height: 150px; /* Hace que la tarjeta ocupe todo el alto del contenedor */
-    }
-…
-    #serie .card .btn:hover {
-        background-color: rgb(89, 89, 247);
-        border-color: rgb(89, 89, 247);
-    }
-
-        margin-top: 20px; /* Reduce el margen superior del título */
-    }
-
-    #hero {
-        padding-bottom: 20px; /* Ajusta el padding inferior del carrusel */
-    }
-
-    #hero .card {
-        height: 420px; /* Ajusta la altura automática para las tarjetas */
-        width: 100%; /* Asegura que las tarjetas ocupen el ancho completo del contenedor */
-        max-width: 400px; /* Ajusta el ancho máximo de las tarjetas */
-        margin: auto;
-    }
-
-    #hero .card-img-top {
-        height: 150px; /* Ajusta la altura de la imagen en las tarjetas */
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        width: 50px; /* Ajusta el tamaño de los íconos de control del carrusel */
-        height: 50px; /* Ajusta el tamaño de los íconos de control del carrusel */
-    }
-
-    /* Estilo específico para la sección "Nosotros" */
-
-    .textonosotros{
-        text-align: center; /**alinea el texto del contenedor**/
-    }
-
-    #nosotros #myVideo{
-        display: none;
-    }
-
-    /* Estilo específico para la sección "Serie" */
-
-    #serie .card {
-        height: 150px; /* Ajusta el tamaño de las tarjetas en móviles */
-        width: 90%;
-
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    #serie .card-img-top {
-        display: none;
-    }
-
-    #serie .card-body {
-        display: none; /* Ocultar el contenido textual en móviles */
-        background-color: rgba(0, 0, 0, 0.0)
-    }
-
-    #serie .card h3 {
-        font-size: 1.2em;
-        font-weight: bold;
-        z-index: 2;
-    }
-
-    #serie .card .btn {
-        display: block;
-        z-index: 2;
-    }
-
-    /* Estilo para cada tarjeta con su imagen de fondo en móviles */
-    #serie .row .col-md-6:nth-child(1) {
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("/static/img/vivienda.jpg");
-        background-position: center;
-        background-size: cover;
-    }
-
-    #serie .row .col-md-6:nth-child(2) {
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/static/img/edificio.jpg");
-    }
-
-    #serie .row .col-md-6:nth-child(3) {
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/static/img/industria.jpg");
-    }
-
-    #serie .card .btn {
-        display: block;
-        color: white;
-        font-size: 1em;
-        width: 150px;
-        padding: 10px 20px;
-        background-color: rgb(48, 48, 119);
-        border-color: rgb(48, 48, 119);
-        margin-top: auto; /* Empuja el botón al final del card-body */
-    }
-
-    #serie .card .btn:hover {
-        background-color: rgb(89, 89, 247);
-        border-color: rgb(89, 89, 247);
-    }
-
-}       
 
 
