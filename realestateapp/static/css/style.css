@@ -231,6 +231,7 @@ section {
 
 #contacto {
     background-color: #ffffff; /* Fondo blanco */   
+    padding: 0 15px; /* Asegura que no haya márgenes excesivos */
 }
 
 #contacto .form-control:focus { /* Cambiamos los colores de los input al estar activos */
@@ -238,11 +239,21 @@ section {
     box-shadow: 0 0 0 .2rem rgba(48, 48, 119, 0.25) !important;
 }
 
+#contacto label {
+    text-align: left;
+    display: block; /* Asegura que el label ocupe toda la fila y quede alineado a la izquierda */
+}
+
+#contacto .d-flex {
+    justify-content: center; /* Asegura que los botones estén centrados */
+}
+
 #contacto .btn {
     width: 100px;
     font-size: 1em;
     background-color: rgb(48, 48, 119);
     border-color: rgb(48, 48, 119);
+    margin: 5px; /* Añade margen entre los botones */
 }
 
 #contacto .btn:hover {
@@ -277,25 +288,26 @@ section {
 
 #ubicacion {
     background-color: rgb(30, 30, 30);
-    color: white  /* Hero */;
+    color: white;
     display: flex;
-    flex-direction: column; /* Asegura que el contenido se alinee en columna */
-    align-items: center; /* Centra horizontalmente el contenido */
-    justify-content: center; /* Centra verticalmente el contenido */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 10px;
     height: calc(100vh - 200px);
-    padding: 10px; /* Agrega padding para reducir el margen */
 }
 
+
 #ubicacion h2 {
-    margin-bottom: 20px; /* Reduce el margen inferior del título */
-    margin-bottom: 20px; /* Reduce el margen inferior del título */
+    margin-bottom: 20px;
 }
 
 #ubicacion iframe {
     height: 450px;
-    width: 600px;
-    border: 0; /* Elimina el borde del iframe */
+    width: 100%;
+    max-width: 600px; /* Limita el tamaño del iframe en pantallas grandes */
+    border: 0;
 }
 
 /* Estilo específico para la sección "Footer" */
@@ -343,7 +355,7 @@ footer .text-end {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 995px) {
 
     .container{
         margin-top: 180px;
@@ -408,6 +420,7 @@ footer .text-end {
         padding-bottom: 20px; /* Ajusta el padding inferior del carrusel */
     }
 
+
     #hero .card {
         height: 420px; /* Ajusta la altura automática para las tarjetas */
         width: 100%; /* Asegura que las tarjetas ocupen el ancho completo del contenedor */
@@ -438,12 +451,8 @@ footer .text-end {
     /* Estilo específico para la sección "Serie" */
 
     #serie .card {
-        height: 150px; /* Ajusta el tamaño de las tarjetas en móviles */
+        height: 90%; /* Ajusta el tamaño de las tarjetas en móviles */
         width: 90%;
-
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
         position: relative;
         justify-content: center;
         align-items: center;
@@ -453,16 +462,15 @@ footer .text-end {
     #serie .card-img-top {
         display: none;
     }
-
-    #serie .card-body {
-        display: none; /* Ocultar el contenido textual en móviles */
-        background-color: rgba(0, 0, 0, 0.0)
-    }
-
+    
     #serie .card h3 {
         font-size: 1.2em;
         font-weight: bold;
         z-index: 2;
+    }
+
+    #serie .card.bg-dark.text-white{
+        background-color: rgba(255, 0, 0, 0) !important;
     }
 
     #serie .card .btn {
@@ -472,17 +480,21 @@ footer .text-end {
 
     /* Estilo para cada tarjeta con su imagen de fondo en móviles */
     #serie .row .col-md-6:nth-child(1) {
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("/static/img/vivienda.jpg");
+        background-image: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("/static/img/vivienda.jpg");
         background-position: center;
         background-size: cover;
     }
 
     #serie .row .col-md-6:nth-child(2) {
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/static/img/edificio.jpg");
+        background-image: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url("/static/img/edificio.jpg");
+        background-position: center;
+        background-size: cover;
     }
 
     #serie .row .col-md-6:nth-child(3) {
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/static/img/industria.jpg");
+        background-image: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url("/static/img/industria.jpg");
+        background-position: center;
+        background-size: cover;
     }
 
     #serie .card .btn {
@@ -501,6 +513,118 @@ footer .text-end {
         border-color: rgb(89, 89, 247);
     }
 
-}       
+    /* Estilo específico para la sección "contacto" */
+
+    #contacto .row {
+        justify-content: center; /* Centra los elementos dentro de la fila */
+        text-align: center; /* Asegura que el contenido esté centrado */
+    }
+
+    #contacto .col-md-6 {
+        max-width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
+    }
+
+    #contacto h2 {
+        text-align: left; /* Mantiene el título alineado a la izquierda */
+    }
+
+    #contacto .form-label {
+        text-align: left; /* Mantiene las etiquetas alineadas a la izquierda */
+    }
+
+    /* Ocultar la imagen en resoluciones pequeñas */
+    #contacto .img-fluid {
+        display: none;
+    }
+
+    /* Botones uno al lado del otro */
+    #contacto .row {
+        justify-content: center; /* Centra los elementos dentro de la fila */
+        text-align: center; /* Asegura que el contenido esté centrado */
+    }
+
+    #contacto .col-md-6 {
+        max-width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
+    }
+
+    #contacto h2 {
+        text-align: left; /* Mantiene el título alineado a la izquierda */
+    }
+
+    #contacto .form-label {
+        text-align: left; /* Mantiene las etiquetas alineadas a la izquierda */
+    }
+
+    /* Ocultar la imagen en resoluciones pequeñas */
+    #contacto .img-fluid {
+        display: none;
+    }
+
+    #contacto .d-flex {
+        flex-direction: row; /* Asegura que los botones estén en fila en lugar de columna */
+        justify-content: space-around; /* Distribuye los botones equitativamente */
+    }
+
+    #contacto .btn {
+        width: 100px; /* Mantén el ancho uniforme en pantallas pequeñas */
+    }
+
+    #form-contacto {
+        margin-top: 20px; /* Ajusta este valor según el espacio que necesites */
+    }
+
+    #contacto .container {
+        margin-top: 0;
+        height: auto; /* Elimina la altura fija */
+        padding-top: 10px; /* Ajusta el espaciado superior según sea necesario */
+        padding-bottom: 30px; /* Asegura que haya suficiente espacio para los botones */
+    }
+
+    #ubicacion iframe {
+        height: 300px;
+        width: 100%; /* Asegura que el iframe se ajuste al ancho del contenedor */
+    }
+
+    #ubicacion {
+        height: calc(100vh - 400px);
+    }
+
+    #ubicacion .container{
+        padding-bottom: 150px;
+    }
+
+    footer {
+        height: 150px; /* Ajusta la altura para que se adapte al contenido */
+        padding: 1rem; /* Añade padding para dar espacio interno */
+    }
+
+    footer .row {
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    footer .col {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+
+    footer .d-flex.align-items-center {
+        flex-direction: row; /* Cambia la dirección de los elementos de flexbox a columna */
+        align-items: center; /* Centra los íconos y el texto horizontalmente */
+        margin-bottom: 0.5rem; /* Agrega margen inferior entre los íconos de contacto */
+        height: 40px;
+    }
+
+    footer .text-end {
+        text-align: center; /* Centra el texto de copyright */
+        margin-top: 0.5rem; /* Agrega margen superior para separar del contenido superior */
+    }
+
+    footer .fa {
+        font-size: 1.2rem; /* Tamaño de íconos más pequeño en pantallas pequeñas */
+    }
+
+}
+
+
 
 
