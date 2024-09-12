@@ -41,3 +41,12 @@ def home(request):
         'desarrollos': desarrollos, 
         'miformulario': formulario_contacto
     })
+
+def mobileViviendas(request):
+    return render(request, 'realestateapp/mobileViviendas.html')
+
+def mobileEdificios(request):
+    return render(request, 'realestateapp/mobileEdificios.html')
+
+def mobileIndustrias(request):
+    return render(request, 'realestateapp/mobileIndustrias.html')

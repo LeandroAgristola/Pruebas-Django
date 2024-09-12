@@ -5,6 +5,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('',views.home, name="home"),
+    path('mobileViviendas/', views.mobileViviendas, name='mobileViviendas'),
+    path('mobileEdificios/', views.mobileEdificios, name='mobileEdificios'),
+    path('mobileIndustrias/', views.mobileIndustrias, name='mobileIndustrias'),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT ) #agramos al archivo URL los directorios de MEDIA
