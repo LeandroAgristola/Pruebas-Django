@@ -4,31 +4,17 @@
 
 {% block content %}
 
-		<section id="nosotros"> <!-- Sección Nosotros -->
-			<div id="nosotros-container" class="container bg-white d-flex align-items-center justify-content-center" >
-				<div class="row w-100">
-					<!-- Video a la izquierda -->
-					<div class="col-md-6 d-flex justify-content-center align-items-center">
-						<video id="myVideo" class="w-100" autoplay loop muted>
-							<source src="/static/img/Video.mp4" type="video/mp4">
-							Su navegador no soporta la etiqueta de vídeo.
-						</video>
-					</div>
-					<!-- Texto a la derecha -->
-					<div class="col-md-6 d-flex justify-content-center align-items-center">
-						<div class="textonosotros p-4">
-							<h2>Sobre <br> <span class="color-acento">Realestate</span></h2> <!-- Título de la sección Nosotros -->
-							<p>
-								A través de la creación, inversión y gerenciamiento de las mismas, buscamos aportar valor agregado y seguir transformando las industrias a las que pertenecemos, 
-								mejorando la experiencia de los clientes, dándoles un servicio diferencial y generando retornos a nuestros inversores. <br><br>
-								Fomentamos una cultura de ética, sin egos, sinérgica y profesional; de puertas abiertas, creativa y de 
-								pensamientos distintos; con plena confianza y delegación en nuestra gente; estableciendo relaciones verdaderas y de largo plazo.
-							</p>
-						</div>
+	<section id="serieMobile">
+			<div class="container text-center py-5 " id=containerMobile>
+				<h2 class="mb-4">Serie <span class="color-acento">Realestate</span></h2>
+				<div class="card bg-dark text-white" id=cardMobile>
+					<div class="card-body d-flex flex-column text-center" id=card-bodyMobile>
+						<h3 class="card-title" id=card-titleMobile>Viviendas</h3>
+						<p class="card-text d-none d-md-block" id=card-textMobile>Un producto único, que busca generar una experiencia diferente en un entorno de disfrute, contención y tranquilidad, inmerso en la naturaleza. <br> Con unidades que se entregan totalmente decoradas y equipadas, con los más completos amenities y servicios, y en entornos que invitan a respirar naturaleza, disfrutar es el único resultado posible.</p>
 					</div>
 				</div>
 			</div>
-		</section>
+	</section>
 
 
-		{% endblock %}
+{% endblock %}

@@ -1,11 +1,7 @@
 Pendientes:
 Crear template de la parte serie
 Crear version login con modal lateral
+El formualario cuando tenemos varios errores, al corregir uno intenta enviar el formulario igual
+
 
 Responsive:
-Tarjetas muestran un recuadro negro en el medio
-No escalan bien y sobresalen en el  contenedor
-Seccion contactono tiene q mostrar la imagen
-Seccion Ubicacion el mapa escala mal y sobresale del contenedor
-Los datos de footer tienen que estar apilados 
-Darle animacion al boton de menu
