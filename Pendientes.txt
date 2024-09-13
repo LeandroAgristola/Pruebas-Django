@@ -10,6 +10,7 @@ Login:
     El cerrar sesion tiene que cerrar la secion y aparece el boton de "login nuevamente"
     Una vez registrado nos tiene que llevar al home nuevamente con el usuario logiado
     Ajustar estilo del formulario
+    en  el forumulario de registro si no coinciden la contraseña no genera errores
 
 
 El formualario cuando tenemos varios errores, al corregir uno intenta enviar el formulario igual

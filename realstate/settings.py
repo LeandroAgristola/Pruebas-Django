@@ -171,3 +171,8 @@ MESSAGE_TAGS={
     mensajes_de_error.WARNING:'warning',
     mensajes_de_error.ERROR:'danger',
 }
+
+LOGIN_URL = '/authentication/logear/'  # Define la URL a la que se redirige si no estás autenticado
+LOGIN_REDIRECT_URL = 'home'  # Redirige a 'home' después de iniciar sesión
+
+APPEND_SLASH = True

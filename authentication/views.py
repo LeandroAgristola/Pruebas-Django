@@ -25,22 +25,23 @@ class VRegistro(View):
 
 def cerrar_sesion(request): #creamos la funcion para cerrar sesion
     logout(request)
-    return redirect('Home') #una vez cerrada la sesion, redireccionamos al home
+    return redirect('home') #una vez cerrada la sesion, redireccionamos al home
 
-def logear(request): #creamos la funcion para iniciar sesion
-    if request.method=="POST": #si el usuario apreto en el boton de Login
-        form=AuthenticationForm(request,data=request.POST)#guardamos en la variable form, los datos del formulario ingresado en login
-        if form.is_valid(): #si los datos del formulario login son correctos
-            nombre_usuario=form.cleaned_data.get("username")
-            contra=form.cleaned_data.get("password")
-            usuario=authenticate(username=nombre_usuario, password=contra) #corroboramos si los datos son correctos segun la base de dato
-            if usuario is not None: # Si el usuario existe, no logea y nos redirecciona al home
+def logear(request):
+    if request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            nombre_usuario = form.cleaned_data.get("username")
+            contra = form.cleaned_data.get("password")
+            usuario = authenticate(username=nombre_usuario, password=contra)
+            if usuario is not None:
                 login(request, usuario)
-                return redirect('Home')
-            else: #si el usuario no existe
-                messages.error(request,"Usuario no valido!")
-        else: #la informacion no se a introducido correctamente
-            messages.error(request,"Informacion incorrecta")
+                return redirect('home')  # Redirige al home si el login es exitoso
+            else:
+                messages.error(request, "Usuario no válido!")
+        else:
+            messages.error(request, "Información incorrecta")
+    else:
+        form = AuthenticationForm()
 
-    form=AuthenticationForm()
-    return render(request,"login/login.html",{"form":form})
+    return render(request, "login/login.html", {"form": form})

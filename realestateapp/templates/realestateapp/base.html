@@ -67,13 +67,12 @@
 		</header>
 
 		<section id="login">
-			<div class="offcanvas offcanvas-start" tabinex="1" id="offcanvas1">
-			  <div class="offcanvas-header">
-				<h5 class="offcanvas-title">Iniciar Sesión</h5>
-				<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" name="button"></button>
-			  </div>
-			  <div class="offcanvas-body">
-				<!-- Formulario de inicio de sesión en el offcanvas -->
+			<div class="offcanvas offcanvas-start" tabindex="1" id="offcanvas1">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title">Iniciar Sesión</h5>
+					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" name="button"></button>
+				</div>
+				<div class="offcanvas-body">
 					<!-- Formulario de inicio de sesión en el offcanvas -->
 					<form action="{% url 'logear' %}" method="post">
 						{% csrf_token %}
@@ -90,17 +89,18 @@
 							<a href="{% url 'Autenticacion' %}" class="btn btn-primary">Registrar</a>
 						</div>
 					</form>
-			  </div>
 
-				{% if messages %}
-				<div class="alert alert-danger">
-					{% for message in messages %}
-						<p>{{ message }}</p>
-					{% endfor %}
+					<!-- Mensajes de error -->
+					{% if messages %}
+					<div class="alert alert-danger mt-3">
+						{% for message in messages %}
+							<p>{{ message }}</p>
+						{% endfor %}
+					</div>
+					{% endif %}
 				</div>
-				{% endif %}
 			</div>
-		  </section>
+		</section>
 
 
 		<!--Contenido Dinamico-->
