@@ -4,13 +4,13 @@
 
 {% block content %}
 
-	<section id="serieMobile">
-			<div class="container text-center py-5 " id=containerMobile>
-				<h2 class="mb-4">Serie <span class="color-acento">Realestate</span></h2>
-				<div class="card bg-dark text-white" id=cardMobile>
+	<section id="serieMobile" style="background-image:url('/static/img/vivienda.jpg');">
+			<div class="container text-center py-5" id="containerMobile">
+				<div class="card text-center text-white" id=cardMobile>
 					<div class="card-body d-flex flex-column text-center" id=card-bodyMobile>
 						<h3 class="card-title" id=card-titleMobile>Viviendas</h3>
-						<p class="card-text d-none d-md-block" id=card-textMobile>Un producto único, que busca generar una experiencia diferente en un entorno de disfrute, contención y tranquilidad, inmerso en la naturaleza. <br> Con unidades que se entregan totalmente decoradas y equipadas, con los más completos amenities y servicios, y en entornos que invitan a respirar naturaleza, disfrutar es el único resultado posible.</p>
+						<p class="card-text" id=card-textMobile>Un producto único, que busca generar una experiencia diferente en un entorno de disfrute, contención y tranquilidad, inmerso en la naturaleza. <br> Con unidades que se entregan totalmente decoradas y equipadas, con los más completos amenities y servicios, y en entornos que invitan a respirar naturaleza, disfrutar es el único resultado posible.</p>
+						<a href="{% url 'home' %}#serie" class="btn btn-light mt-3">Volver</a>
 					</div>
 				</div>
 			</div>

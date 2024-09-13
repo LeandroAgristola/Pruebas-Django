@@ -328,13 +328,8 @@ section {
 /* Estilo específico para la sección "Footer" */
 
 footer {
-    background-color: #ffffff; /* Fondo blanco */
-    height: 100px;
-}
-
-footer {
+    height: 100%;
     font-size: 1.1em;
-
 }
 
 footer a {
@@ -370,7 +365,7 @@ footer .text-end {
 }
 
 
-@media (max-width: 995px) {
+@media (max-width: 1000px) {
 
     .container{
         margin-top: 180px;
@@ -644,6 +639,58 @@ footer .text-end {
         font-size: 1.2rem; /* Tamaño de íconos más pequeño en pantallas pequeñas */
     }
 
+    /* Estilos para Serie Mobile */
+
+    #serieMobile{
+        background-position: center;
+        background-size: cover;
+    }
+
+    #containerMobile{
+
+    }
+
+    #cardMobile{
+        height: 100%; 
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    #card-bodyMobile{
+        height: 80%; 
+        width: 80%;
+        text-align: center;
+        align-items: center;
+    }
+
+    #card-titleMobile{
+        margin-bottom: 50px;
+        font-size: 2rem;
+        font-weight: bold;
+        color:  rgb(89, 89, 247);
+    }
+
+    #card-textMobile{
+        font-size: 1.5rem;
+    }
+
+    #serieMobile .card .btn {
+        color: white;
+        font-size: 1em;
+        width: 150px;
+        padding: 10px 20px;
+        background-color: rgb(48, 48, 119);
+        border-color: rgb(48, 48, 119);
+        margin-top: auto; 
+    }
+
+    #serieMobile .card .btn:hover {
+        background-color: rgb(89, 89, 247);
+        border-color: rgb(89, 89, 247);
+    }
 }
 
 

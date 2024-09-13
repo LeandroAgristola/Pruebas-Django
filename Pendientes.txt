@@ -1,7 +1,5 @@
 Pendientes:
-Crear template de la parte serie
 Crear version login con modal lateral
 El formualario cuando tenemos varios errores, al corregir uno intenta enviar el formulario igual
-
 
 Responsive:
