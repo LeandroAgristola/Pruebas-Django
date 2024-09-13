@@ -171,3 +171,4 @@ MESSAGE_TAGS={
     mensajes_de_error.ERROR:'danger',
 }
 
+CSRF_TRUSTED_ORIGINS = ['https://*.github.dev'] #comando para administrar el sitio desde codespaces de git hub
