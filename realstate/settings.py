@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'realestateapp',
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -170,5 +171,3 @@ MESSAGE_TAGS={
     mensajes_de_error.WARNING:'warning',
     mensajes_de_error.ERROR:'danger',
 }
-
-CSRF_TRUSTED_ORIGINS = ['https://*.github.dev'] #comando para administrar el sitio desde codespaces de git hub
