@@ -54,9 +54,6 @@
 									<li class="nav-item">
 										<a class="nav-link" href="{% url 'home' %}#ubicacion">Ubicación</a>
 									</li>
-									<li class="nav-item">
-										<a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvas1">Login</a>
-									</li>
 								</ul>
 							</div>
 						</nav>
@@ -65,43 +62,6 @@
 			</div>
 
 		</header>
-
-		<section id="login">
-			<div class="offcanvas offcanvas-start" tabindex="1" id="offcanvas1">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title">Iniciar Sesión</h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" name="button"></button>
-				</div>
-				<div class="offcanvas-body">
-					<!-- Formulario de inicio de sesión en el offcanvas -->
-					<form action="{% url 'logear' %}" method="post">
-						{% csrf_token %}
-						<div class="form-group mb-3">
-							<label for="username" class="form-label">Nombre de usuario:</label>
-							<input type="text" class="form-control" id="username" name="username" required>
-						</div>
-						<div class="form-group mb-3">
-							<label for="password" class="form-label">Contraseña:</label>
-							<input type="password" class="form-control" id="password" name="password" required>
-						</div>
-						<div class="botones">
-							<button type="submit" class="btn btn-primary">Confirmar</button>
-							<a href="{% url 'Autenticacion' %}" class="btn btn-primary">Registrar</a>
-						</div>
-					</form>
-
-					<!-- Mensajes de error -->
-					{% if messages %}
-					<div class="alert alert-danger mt-3">
-						{% for message in messages %}
-							<p>{{ message }}</p>
-						{% endfor %}
-					</div>
-					{% endif %}
-				</div>
-			</div>
-		</section>
-
 
 		<!--Contenido Dinamico-->
 		{% block content %}

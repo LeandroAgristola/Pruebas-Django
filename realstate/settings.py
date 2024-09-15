@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'realestateapp',
-    'authentication',
 ]
 
 MIDDLEWARE = [

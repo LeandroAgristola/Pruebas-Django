@@ -93,13 +93,6 @@ section {
     color: rgb(89, 89, 247); /* Color del spinner */
 }
 
-
-/* Estilo específico para la sección de login */
-
-#login .botones {
-    text-align: center;
-}
-
 /* Hero */
 #hero {
     background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/img/hero.jpg');
@@ -221,7 +214,6 @@ section {
 }
 
 /* Estilo específico para la sección "Serie" */
-
 #serie {
     background-color: rgb(30, 30, 30);
     color: white; /* Color del texto en la tarjeta */
@@ -233,7 +225,7 @@ section {
     padding: 0px;
 }
 
-#containerSerie{
+#containerSerie {
     margin-top: 20px !important;
 }
 
@@ -242,6 +234,7 @@ section {
     height: 100%; /* Hace que la tarjeta ocupe todo el alto del contenedor */
     display: flex;
     flex-direction: column; /* Alinea el contenido de la tarjeta en una columna */
+    justify-content: space-between; /* Empuja el contenido de la tarjeta hacia los extremos */
 }
 
 #serie .card-img-top {
@@ -251,21 +244,17 @@ section {
 
 #serie .card-body {
     background-color: rgba(0, 0, 0, 0.7); /* Fondo de la tarjeta con opacidad */
-    display: flex;
-    flex-direction: column;
     flex: 1; /* Asegura que el cuerpo de la tarjeta ocupe el espacio disponible */
-    justify-content: space-between; /* Empuja el contenido hacia los extremos */
     padding: 20px;
 }
 
 #serie .card .btn {
-    display: none;
+    display: none; /* Oculta el botón en pantallas grandes */
 }
 
 #serie .row {
     margin: 0 auto; /* Centra la fila horizontalmente */
 }
-
 
 /* Estilo específico para la sección "contacto" */
 
@@ -394,7 +383,7 @@ footer .text-end {
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
 
     .container{
         margin-top: 180px;
@@ -493,69 +482,48 @@ footer .text-end {
         display: none;
     }
 
-    /* Estilo específico para la sección "Serie" */
+/* Estilo específico para la sección "Serie" */
+
+    #serie {
+        background-color: rgb(30, 30, 30);
+        color: white; /* Color del texto en la tarjeta */
+        margin: 0; /* Elimina cualquier margen blanco adicional */
+    }
+
+    #serie h2 {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #containerSerie {
+        margin-top: 20px !important;
+    }
 
     #serie .card {
-        height: 90%; /* Ajusta el tamaño de las tarjetas en móviles */
-        width: 90%;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        border: none; /* Elimina el borde predeterminado de las tarjetas */
+        height: 100%; /* Hace que la tarjeta ocupe todo el alto del contenedor */
+        display: flex;
+        flex-direction: column; /* Alinea el contenido de la tarjeta en una columna */
+        justify-content: space-between; /* Empuja el contenido de la tarjeta hacia los extremos */
     }
 
     #serie .card-img-top {
-        display: none;
-    }
-    
-    #serie .card h3 {
-        font-size: 1.2em;
-        font-weight: bold;
-        z-index: 2;
+        height: 180px; /* Ajusta la altura de las imágenes de las tarjetas */
+        object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
     }
 
-    #serie .card.bg-dark.text-white, .card-body{
-        background-color: rgba(255, 0, 0, 0) !important;
+    #serie .card-body {
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo de la tarjeta con opacidad */
+        flex: 1; /* Asegura que el cuerpo de la tarjeta ocupe el espacio disponible */
+        padding: 20px;
     }
 
     #serie .card .btn {
-        display: block;
-        z-index: 2;
+        display: none; /* Oculta el botón en pantallas grandes */
     }
 
-    /* Estilo para cada tarjeta con su imagen de fondo en móviles */
-    #serie .row .col-md-6:nth-child(1) {
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("/static/img/vivienda.jpg");
-        background-position: center;
-        background-size: cover;
-    }
-
-    #serie .row .col-md-6:nth-child(2) {
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url("/static/img/edificio.jpg");
-        background-position: center;
-        background-size: cover;
-    }
-
-    #serie .row .col-md-6:nth-child(3) {
-        background-image: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url("/static/img/industria.jpg");
-        background-position: center;
-        background-size: cover;
-    }
-
-    #serie .card .btn {
-        display: block;
-        color: white;
-        font-size: 1em;
-        width: 150px;
-        padding: 10px 20px;
-        background-color: rgb(48, 48, 119);
-        border-color: rgb(48, 48, 119);
-        margin-top: auto; /* Empuja el botón al final del card-body */
-    }
-
-    #serie .card .btn:hover {
-        background-color: rgb(89, 89, 247);
-        border-color: rgb(89, 89, 247);
+    #serie .row {
+        margin: 0 auto; /* Centra la fila horizontalmente */
     }
 
     /* Estilo específico para la sección "contacto" */
