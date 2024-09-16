@@ -4,7 +4,7 @@
 set -o errexit
 
 # Modifique esta línea según sea necesario para su administrador de paquetes
-pip install -r requirements.txt
+# pip install -r requirements.txt
 
 # Convertir archivos de activos estático
 python manage.py collectstatic --no-input
