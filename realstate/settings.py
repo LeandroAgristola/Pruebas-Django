@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 
 import os
+# *CONFIGURACION PARA DEPLOY EN RENDER*
+import dj_database_url
 
 from django.contrib.messages import constants as mensajes_de_error # para trabajar con msj de error 
 
@@ -61,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # *CONFIGURACION PARA DEPLOY EN RENDER*
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'realstate.urls'
@@ -87,11 +91,13 @@ WSGI_APPLICATION = 'realstate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# *CONFIGURACION PARA DEPLOY EN RENDER*
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        conn_max_age=600
+    )
 }
 
 
@@ -130,6 +136,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# *CONFIGURACION PARA DEPLOY EN RENDER*
+if not DEBUG:
+# Indica a Django que copie los activos estáticos en una ruta llamada staticfiles` (esto es específico de Render)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Habilite el backend de almacenamiento WhiteNoise, que comprime archivos estáticos para reducir el uso del disco
+# y cambia el nombre de los archivos con nombres únicos para cada versión para admitir el almacenamiento en caché a largo plazo
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
