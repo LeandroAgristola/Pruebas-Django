@@ -214,6 +214,7 @@ section {
 }
 
 /* Estilo específico para la sección "Serie" */
+
 #serie {
     background-color: rgb(30, 30, 30);
     color: white; /* Color del texto en la tarjeta */
@@ -225,46 +226,99 @@ section {
     padding: 0px;
 }
 
-#containerSerie {
-    margin-top: 20px !important;
-}
-
 #serie .card {
     border: none; /* Elimina el borde predeterminado de las tarjetas */
     height: 100%; /* Hace que la tarjeta ocupe todo el alto del contenedor */
     display: flex;
     flex-direction: column; /* Alinea el contenido de la tarjeta en una columna */
     justify-content: space-between; /* Empuja el contenido de la tarjeta hacia los extremos */
+    min-height: 350px;
 }
 
-#serie .card-img-top {
-    height: 180px; /* Ajusta la altura de las imágenes de las tarjetas */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+/**ESTILO PARA LA SECCION DE SERIE en este caso aplicamos primero mobilefirst*/ 
+
+#serie{ 
+    background-color: rgb(30, 30, 30);
+    color:white; /**color del texto**/
+    text-align: center;
+
 }
 
-#serie .card-body {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo de la tarjeta con opacidad */
-    flex: 1; /* Asegura que el cuerpo de la tarjeta ocupe el espacio disponible */
-    padding: 20px;
+#serie .contenedor{
+    margin-top: 180px;
+    padding: 0;
+    height: calc(100vh - 180px);
 }
 
-#serie .card .btn {
-    display: none; /* Oculta el botón en pantallas grandes */
+#serie h2 {
+    padding-top: 50px;
 }
 
-#serie .row {
-    margin: 0 auto; /* Centra la fila horizontalmente */
+#serie p{
+    display: none; /**ocultamos el texto para la version mobile, ya que el mismo se muestra en un pagina individual**/
+
+}
+
+#serie .submenu { /**aplicamos estilo a las imagenes de todos los sub menu**/
+    background-position: center center; /**centramos el fondo**/
+    background-size: cover; /**el fondo cubre todo la tarjeta**/
+    padding: 20px ; /**agregamos relleno a la tarjeta**/
+    margin: 20px; /**agregamos margen a las tarjetas**/
+    border-radius: 15px; /**redondeamos el borde de las tarjetas**/
+}
+
+.submenu:first-child{ /**estilo apra el 1er menu**/
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.5)
+    )
+        ,url("/static/img/vivienda.jpg");
+
+}
+.submenu:nth-child(2){ /**estilo apra el 2er menu**/
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.5)
+    )
+     ,url("/static/img/edificio.jpg");
+
+}
+.submenu:nth-child(3){ /**estilo apra el 3er menu**/
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.5)
+    )
+        ,url("/static/img/industria.jpg");
+
+}
+
+#serie .btn {
+    font-size: 1em;
+    width: 100px;
+    color: white;
+    padding: 10px 20px;
+    background-color: rgb(48, 48, 119);
+    border-color: rgb(48, 48, 119);
+}
+
+#serie .btn:hover {
+    background-color:rgb(89, 89, 247);
+    border-color:rgb(89, 89, 247);
 }
 
 /* Estilo específico para la sección "contacto" */
 
-#login .offcanvas-body,
 #contacto {
     background-color: #ffffff; /* Fondo blanco */   
     padding: 0 15px; /* Asegura que no haya márgenes excesivos */
 }
 
-#login .form-control:focus,
 #contacto .form-control:focus { /* Cambiamos los colores de los input al estar activos */
     border-color: rgb(48, 48, 119) !important;
     box-shadow: 0 0 0 .2rem rgba(48, 48, 119, 0.25) !important;
@@ -279,7 +333,6 @@ section {
     justify-content: center; /* Asegura que los botones estén centrados */
 }
 
-#login .btn,
 #contacto .btn {
     width: 100px;
     font-size: 1em;
@@ -288,7 +341,6 @@ section {
     margin: 5px; /* Añade margen entre los botones */
 }
 
-#login .btn:hover,
 #contacto .btn:hover {
     background-color: rgb(89, 89, 247);
     border-color: rgb(89, 89, 247);
@@ -381,6 +433,120 @@ footer .text-end {
     list-style-type: none; /* Eliminar los puntos de la lista */
     padding-left: 0; /* Eliminar el margen izquierdo */
 }
+
+
+@media (min-width: 1024px) {
+
+    /**Estilo para la seccion del sub menu**/
+
+
+    #serie .contenedor{
+        margin-top: 100px;
+        padding: 0;
+        height: calc(100vh - 100px);
+    }
+
+    .datos_empresa{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    #serie p{
+        display: none;
+
+    }
+
+    #serie .submenu { /**aplicamos estilo a las imagenes de todos los sub menu**/
+    width: 70%;
+    height: 180px;
+
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    /**Estilo para la seccion del sub menu**/
+
+    #serie .datos_empresa{ /** utilizamos la clase que contiene todos los sub menu**/
+        display: flex; /**colocamos los sub menu en linea horizontal**/
+        justify-content: center; /**centramos el contenido**/
+        flex-direction: row;
+
+    }
+
+    #serie p{
+        display: block;
+        margin-top: 50px;
+    }
+
+    #serie h2{
+        margin-top: 50px;
+        padding-top:50px ;
+        font-size: 4em;
+    }
+
+    #serie h3{
+        margin-top: 40px; /**agregamos relleno a los titulos**/
+        font-weight: bold;
+
+    }
+
+    #serie .submenu{
+        padding: 50px;
+        width: 400px;
+        height: 550px;
+        background-size: 100% 150px; /**las imaganes nuevas cubren todo el ancho pero no todo el largo**/
+        background-repeat: no-repeat; /**las imagenes nuevas no se repiten dentro del menu**/
+        background-position-y: 0; /**posiciona la imagenes nuevas arriba de los menu**/
+        background-color: rgba(50,50,50,0.5); /**cambiamos el color de fondo de los submenu**/
+        box-shadow: 2px 2px 10px rgba(50,50,50,0.5) /**agregamos sombras a las cartas**/
+        
+    }
+
+    #serie .submenu a{
+        display: none;
+    }
+
+/**cambiamos las imagenes de los sub menu**/
+    
+    .submenu:first-child{ /**estilo apra el 1er menu**/
+
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.8),
+            rgba(0,0,0,0.5)
+        )
+            ,url("/static/img/vivienda.jpg");
+    
+    }
+    .submenu:nth-child(2){ /**estilo apra el 2er menu**/
+    
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.8),
+            rgba(0,0,0,0.5)
+        )
+            ,url("/static/img/edificio.jpg");
+    
+    }
+    .submenu:nth-child(3){ /**estilo apra el 3er menu**/
+    
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.8),
+            rgba(0,0,0,0.5)
+        )
+            ,url("/static/img/industria.jpg");
+    
+    }
+
+
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -482,49 +648,9 @@ footer .text-end {
         display: none;
     }
 
-/* Estilo específico para la sección "Serie" */
+    /* Estilo específico para la sección "Serie" */
 
-    #serie {
-        background-color: rgb(30, 30, 30);
-        color: white; /* Color del texto en la tarjeta */
-        margin: 0; /* Elimina cualquier margen blanco adicional */
-    }
 
-    #serie h2 {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    #containerSerie {
-        margin-top: 20px !important;
-    }
-
-    #serie .card {
-        border: none; /* Elimina el borde predeterminado de las tarjetas */
-        height: 100%; /* Hace que la tarjeta ocupe todo el alto del contenedor */
-        display: flex;
-        flex-direction: column; /* Alinea el contenido de la tarjeta en una columna */
-        justify-content: space-between; /* Empuja el contenido de la tarjeta hacia los extremos */
-    }
-
-    #serie .card-img-top {
-        height: 180px; /* Ajusta la altura de las imágenes de las tarjetas */
-        object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-    }
-
-    #serie .card-body {
-        background-color: rgba(0, 0, 0, 0.7); /* Fondo de la tarjeta con opacidad */
-        flex: 1; /* Asegura que el cuerpo de la tarjeta ocupe el espacio disponible */
-        padding: 20px;
-    }
-
-    #serie .card .btn {
-        display: none; /* Oculta el botón en pantallas grandes */
-    }
-
-    #serie .row {
-        margin: 0 auto; /* Centra la fila horizontalmente */
-    }
 
     /* Estilo específico para la sección "contacto" */
 
@@ -689,7 +815,6 @@ footer .text-end {
         border-color: rgb(89, 89, 247);
     }
 }
-
 
 
 
