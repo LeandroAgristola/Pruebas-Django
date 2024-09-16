@@ -142,10 +142,14 @@ section {
 }
 
 #hero .card-img-top {
-    height: 250px;
+    height: 150px;
     object-fit: cover;
 }
 
+#hero .card-text {
+    height: 100px;
+
+}
 
 #hero .card .btn {
     font-size: 1em;
@@ -592,7 +596,7 @@ footer .text-end {
     }
 
     .navbar-toggler-icon {
-        background-image: url("/static/logo/barra-de-menu.png");
+        background-image: url("\static\logo\barra-de-menu.png");
         height: 35px;
         width: 35px;
         border-radius: 15%;
