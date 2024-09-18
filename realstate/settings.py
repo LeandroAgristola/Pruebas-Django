@@ -92,10 +92,11 @@ WSGI_APPLICATION = 'realstate.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 # *CONFIGURACION PARA DEPLOY EN RENDER*
+# Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost/postgres',
+        default='postgresql://realestatadb_user:EHyBJ4I2TsZlT89UHbpZjjnvqpJne0zI@dpg-crllckbv2p9s73e0q0ig-a:5432/realestatadb',
         conn_max_age=600
     )
 }
