@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # *CONFIGURACION PARA DEPLOY EN RENDER*
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://realestate-crud-qxko.onrender.com', 'localhost']
 
 # *CONFIGURACION PARA DEPLOY EN RENDER*
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
