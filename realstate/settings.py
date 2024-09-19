@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # *CONFIGURACION PARA DEPLOY EN RENDER*
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['https://realestate-crud-qxko.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['realestate-crud-qxko.onrender.com', 'localhost']
 
 # *CONFIGURACION PARA DEPLOY EN RENDER*
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -95,8 +95,7 @@ WSGI_APPLICATION = 'realstate.wsgi.application'
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
     'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://realestatadb_user:EHyBJ4I2TsZlT89UHbpZjjnvqpJne0zI@dpg-crllckbv2p9s73e0q0ig-a:5432/realestatadb',
+        default='postgres://realestatadb_user:EHyBJ4I2TsZlT89UHbpZjjnvqpJne0zI@dpg-crllckbv2p9s73e0q0ig-a.frankfurt-postgres.render.com/realestatadb',
         conn_max_age=600
     )
 }
