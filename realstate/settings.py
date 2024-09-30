@@ -96,7 +96,8 @@ WSGI_APPLICATION = 'realstate.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         default='postgres://realestatadb_user:EHyBJ4I2TsZlT89UHbpZjjnvqpJne0zI@dpg-crllckbv2p9s73e0q0ig-a.frankfurt-postgres.render.com/realestatadb',
-        conn_max_age=600
+        conn_max_age=600,
+        ssl_require=True
     )
 }
 
