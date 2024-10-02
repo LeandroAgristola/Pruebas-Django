@@ -166,7 +166,7 @@ EMAIL_HOST = "smtp-mail.outlook.com"  # Host SMTP de Hotmail (Outlook)
 EMAIL_USE_TLS = True  # Utilizar TLS
 EMAIL_PORT = 587  # Puerto SMTP para TLS
 EMAIL_HOST_USER='leo_91_166@hotmail.com' #direccion de correo electronico
-EMAIL_HOST_PASSWORD='paozgadndgittrdq' #agregamos la contraseña de nuestro correo 
+EMAIL_HOST_PASSWORD = os.environ.get('paozgadndgittrdq', 'default_password') #agregamos la contraseña de nuestro correo 
 
 LOGGING = {
     'version': 1,
