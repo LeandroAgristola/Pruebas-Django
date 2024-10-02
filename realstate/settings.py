@@ -137,13 +137,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 # Configuración de archivos estáticos
+STATIC_URL = '/static/'  # Añade esta línea
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'realestateapp/static'),
 ]
-
-# Configuración para entorno de producción
-# Habilite el backend de almacenamiento WhiteNoise, que comprime archivos estáticos para reducir el uso del disco
-# y cambia el nombre de los archivos con nombres únicos para cada versión para admitir el almacenamiento en caché a largo plazo
 
 # Configuración para entorno de producción
 if not DEBUG:
