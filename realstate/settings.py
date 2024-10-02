@@ -136,16 +136,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.0/howto/static-files/
+
 # Configuración de archivos estáticos
 STATIC_URL = '/static/'  # Añade esta línea
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'realestateapp/static'),
 ]
 
+# Configuración para archivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Mueve esta línea fuera del bloque if not DEBUG
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # Mantén esta línea aquí
+
 # Configuración para entorno de producción
 if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    # Aquí podrías tener otra configuración relacionada con producción
+    pass  # Este bloque puede quedar vacío o puedes agregar configuraciones específicas para producción
 
 # Configuración para archivos multimedia
 MEDIA_URL = '/media/'

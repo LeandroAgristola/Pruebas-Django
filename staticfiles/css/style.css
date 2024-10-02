@@ -1,0 +1,824 @@
+/* General */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+h1 { font-size: 3em; font-weight: bold; }
+h2 { font-size: 2.5em; font-weight: bold; }
+h3 { font-size: 2em; }
+p { font-size: 1.1em; }
+a {text-decoration: none; } /* Elimina el subrayado */
+
+
+.color-acento { color:rgb(89, 89, 247);} /**Estilo de los textos diferentes**/
+
+.container{
+    margin-top: 100px;
+    padding: 0;
+    height: calc(100vh - 100px);
+}
+
+/* Header */
+
+section {
+    scroll-margin-top: 100px; /* Altura del menú fijo */
+}
+
+.logo-img {
+    height: 80px;
+    width: 120px;
+}
+
+.logo-text {
+    color: rgb(48, 48, 119);
+    margin: 0;
+    padding: 25px 0px;
+    font-weight: bold;
+    font-size: 2em;
+
+}
+
+.custom-header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+/* Navbar */
+.navbar-dark .navbar-nav .nav-link {
+    font-size: 1.5em;
+    padding: 15px 10px;
+    font-weight: bold;
+    color: black;
+    transition: all 0.5s;
+    background-color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgb(89, 89, 247);
+    padding: 15px 15px;
+}
+
+.navbar-dark .navbar-nav .btn {
+    width: 150px;
+    height: 50px;
+    font-size: 0.8em;
+    background-color: rgb(48, 48, 119);
+    border-color: rgb(48, 48, 119);
+    margin: 0; /* Añade margen entre los botones */
+}
+
+.navbar-dark .navbar-nav .btn:hover {
+    background-color: rgb(89, 89, 247);
+    border-color: rgb(89, 89, 247);
+}
+
+/* Estilos para el spinner en el modal de carga */
+#loadingModal .spinner-border {
+    color: rgb(89, 89, 247); /* Color del spinner */
+}
+
+/* Hero */
+#hero {
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+#hero h1 {
+    margin-top: 40px; /* Reducir margen superior */
+    margin-bottom: 20px; /* Asegurar que no haya espacio excesivo debajo del título */
+}
+
+/* Tarjetas en el carrusel */
+
+#hero .carousel {
+    padding: 0; /* Remover padding innecesario */
+    margin-bottom: 20px; /* Añadir un pequeño margen inferior para evitar que se pegue a la siguiente sección */
+}
+
+#hero .carousel-inner {
+    justify-content: center;
+    padding-bottom: 0; /* Reducir el padding inferior del carrusel */
+    padding-bottom: 50px;
+    align-items: center;
+}
+
+#hero .carousel-item {
+    justify-content: center;
+    align-items: center;
+}
+
+#hero .card {
+    border-radius: 10px;
+    height: 450px; /* Ajustar altura */
+    max-width: 450px; /* Ajustar el ancho máximo */
+    background: rgba(0, 0, 0, 0.700);
+    color: white;
+    background-position: center;
+    background-size: cover;
+    padding: 15px;
+    margin: 20px auto; /* Añadir margen superior e inferior */
+}
+
+#hero .card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+
+#hero .card-text {
+    height: 100px;
+
+}
+
+#hero .card .btn {
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: rgb(48, 48, 119);
+    border-color: rgb(48, 48, 119);
+}
+
+#hero .card .btn:hover {
+    background-color:rgb(89, 89, 247);
+    border-color:rgb(89, 89, 247);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 70px; /* Ajusta el tamaño a tu gusto */
+    height: 70px; /* Ajusta el tamaño a tu gusto */
+}
+
+/* Estilo específico para la sección "Nosotros" */
+
+#nosotros {
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+.textonosotros {
+    text-align: left;
+    color: #000;
+}
+
+/* Estilos para pantallas grandes */
+#nosotros {
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+.textonosotros {
+    text-align: left;
+    color: #000;
+}
+
+/* Estilos para pantallas grandes */
+
+#nosotros {
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+.textonosotros {
+    text-align: left;
+    color: #000;
+}
+
+#nosotros-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    width: 100%;
+}
+
+.col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo específico para la sección "Serie" */
+
+#serie {
+    background-color: rgb(30, 30, 30);
+    color: white; /* Color del texto en la tarjeta */
+    margin: 0; /* Elimina cualquier margen blanco adicional */
+}
+
+#serie h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#serie .card {
+    border: none; /* Elimina el borde predeterminado de las tarjetas */
+    height: 100%; /* Hace que la tarjeta ocupe todo el alto del contenedor */
+    display: flex;
+    flex-direction: column; /* Alinea el contenido de la tarjeta en una columna */
+    justify-content: space-between; /* Empuja el contenido de la tarjeta hacia los extremos */
+    min-height: 350px;
+}
+
+/**ESTILO PARA LA SECCION DE SERIE en este caso aplicamos primero mobilefirst*/ 
+
+#serie{ 
+    background-color: rgb(30, 30, 30);
+    color:white; /**color del texto**/
+    text-align: center;
+
+}
+
+#serie .contenedor{
+    margin-top: 180px;
+    padding: 0;
+    height: calc(100vh - 180px);
+}
+
+#serie h2 {
+    padding-top: 50px;
+}
+
+#serie p{
+    display: none; /**ocultamos el texto para la version mobile, ya que el mismo se muestra en un pagina individual**/
+
+}
+
+#serie .submenu { /**aplicamos estilo a las imagenes de todos los sub menu**/
+    background-position: center center; /**centramos el fondo**/
+    background-size: cover; /**el fondo cubre todo la tarjeta**/
+    padding: 20px ; /**agregamos relleno a la tarjeta**/
+    margin: 20px; /**agregamos margen a las tarjetas**/
+    border-radius: 15px; /**redondeamos el borde de las tarjetas**/
+}
+
+.submenu:first-child{ /**estilo apra el 1er menu**/
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.5)
+    )
+        ,url("/static/img/vivienda.jpg");
+
+}
+.submenu:nth-child(2){ /**estilo apra el 2er menu**/
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.5)
+    )
+     ,url("/static/img/edificio.jpg");
+
+}
+.submenu:nth-child(3){ /**estilo apra el 3er menu**/
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.5)
+    )
+        ,url("/static/img/industria.jpg");
+
+}
+
+#serie .btn {
+    font-size: 1em;
+    width: 100px;
+    color: white;
+    padding: 10px 20px;
+    background-color: rgb(48, 48, 119);
+    border-color: rgb(48, 48, 119);
+}
+
+#serie .btn:hover {
+    background-color:rgb(89, 89, 247);
+    border-color:rgb(89, 89, 247);
+}
+
+/* Estilo específico para la sección "contacto" */
+
+#contacto {
+    background-color: #ffffff; /* Fondo blanco */   
+    padding: 0 15px; /* Asegura que no haya márgenes excesivos */
+}
+
+#contacto .form-control:focus { /* Cambiamos los colores de los input al estar activos */
+    border-color: rgb(48, 48, 119) !important;
+    box-shadow: 0 0 0 .2rem rgba(48, 48, 119, 0.25) !important;
+}
+
+#contacto label {
+    text-align: left;
+    display: block; /* Asegura que el label ocupe toda la fila y quede alineado a la izquierda */
+}
+
+#contacto .d-flex {
+    justify-content: center; /* Asegura que los botones estén centrados */
+}
+
+#contacto .btn {
+    width: 100px;
+    font-size: 1em;
+    background-color: rgb(48, 48, 119);
+    border-color: rgb(48, 48, 119);
+    margin: 5px; /* Añade margen entre los botones */
+}
+
+#contacto .btn:hover {
+    background-color: rgb(89, 89, 247);
+    border-color: rgb(89, 89, 247);
+}
+
+/* Estilos para el spinner en el modal de carga */
+#loadingModal .spinner-border {
+    color: rgb(89, 89, 247); /* Color del spinner */
+}
+
+/* Estilos para el modal de "mensaje enviado" */
+#mensajeModal .modal-header, 
+#mensajeModal .modal-body, 
+#mensajeModal .modal-footer {
+    text-align: center;
+}
+
+#mensajeModal .modal-footer .btn {
+    background-color: rgb(48, 48, 119);
+    border-color: rgb(48, 48, 119);
+    width: 100px; /* Ajuste del tamaño del botón */
+}
+
+#mensajeModal .modal-footer .btn:hover {
+    background-color: rgb(89, 89, 247);
+    border-color: rgb(89, 89, 247);
+}
+
+/* Estilo específico para la sección "ubicacion" */
+
+#ubicacion {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    height: calc(100vh - 200px);
+}
+
+
+#ubicacion h2 {
+    margin-bottom: 20px;
+}
+
+#ubicacion iframe {
+    height: 450px;
+    width: 100%;
+    max-width: 600px; /* Limita el tamaño del iframe en pantallas grandes */
+    border: 0;
+}
+
+/* Estilo específico para la sección "Footer" */
+
+footer {
+    height: 100%;
+    font-size: 1.1em;
+}
+
+footer a {
+    color: black; /* Color del texto de los enlaces */
+}
+
+footer a:hover {
+    color: rgb(48, 48, 119); /* Cambia el color al pasar el cursor (puedes usar el color que prefieras) */
+}
+
+footer .fa {
+    font-size: 1.5rem; /* Tamaño de ícono */
+}
+
+footer .text-end {
+    margin-top: 0.5rem; /* Separación entre los datos y el copyright */
+}
+
+
+/* Ajusta el tamaño del texto del mensaje de error */
+.alert-danger {
+    background-color: #f8d7da; /* Cambia el color de fondo del mensaje de error */
+    border-color: #f5c6cb; /* Cambia el color del borde */
+    color: #721c24; /* Cambia el color del texto */
+    height: 55px;
+}
+
+/* Ajusta el tamaño y estilo del texto dentro de la lista de errores */
+.alert-danger .errorlist li {
+    font-size: 15px; /* Tamaño del texto del mensaje de error */
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding-left: 0; /* Eliminar el margen izquierdo */
+}
+
+
+@media (min-width: 1024px) {
+
+    /**Estilo para la seccion del sub menu**/
+
+
+    #serie .contenedor{
+        margin-top: 100px;
+        padding: 0;
+        height: calc(100vh - 100px);
+    }
+
+    .datos_empresa{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    #serie p{
+        display: none;
+
+    }
+
+    #serie .submenu { /**aplicamos estilo a las imagenes de todos los sub menu**/
+    width: 70%;
+    height: 180px;
+
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    /**Estilo para la seccion del sub menu**/
+
+    #serie .datos_empresa{ /** utilizamos la clase que contiene todos los sub menu**/
+        display: flex; /**colocamos los sub menu en linea horizontal**/
+        justify-content: center; /**centramos el contenido**/
+        flex-direction: row;
+
+    }
+
+    #serie p{
+        display: block;
+        margin-top: 50px;
+    }
+
+    #serie h2{
+        margin-top: 50px;
+        padding-top:50px ;
+        font-size: 4em;
+    }
+
+    #serie h3{
+        margin-top: 40px; /**agregamos relleno a los titulos**/
+        font-weight: bold;
+
+    }
+
+    #serie .submenu{
+        padding: 50px;
+        width: 400px;
+        height: 550px;
+        background-size: 100% 150px; /**las imaganes nuevas cubren todo el ancho pero no todo el largo**/
+        background-repeat: no-repeat; /**las imagenes nuevas no se repiten dentro del menu**/
+        background-position-y: 0; /**posiciona la imagenes nuevas arriba de los menu**/
+        background-color: rgba(50,50,50,0.5); /**cambiamos el color de fondo de los submenu**/
+        box-shadow: 2px 2px 10px rgba(50,50,50,0.5) /**agregamos sombras a las cartas**/
+        
+    }
+
+    #serie .submenu a{
+        display: none;
+    }
+
+/**cambiamos las imagenes de los sub menu**/
+    
+    .submenu:first-child{ /**estilo apra el 1er menu**/
+
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.8),
+            rgba(0,0,0,0.5)
+        )
+            ,url("/static/img/vivienda.jpg");
+    
+    }
+    .submenu:nth-child(2){ /**estilo apra el 2er menu**/
+    
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.8),
+            rgba(0,0,0,0.5)
+        )
+            ,url("/static/img/edificio.jpg");
+    
+    }
+    .submenu:nth-child(3){ /**estilo apra el 3er menu**/
+    
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.8),
+            rgba(0,0,0,0.5)
+        )
+            ,url("/static/img/industria.jpg");
+    
+    }
+
+
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .container{
+        margin-top: 180px;
+        padding: 0;
+        height: calc(100vh - 180px);
+    }
+
+    /* Header */
+
+    section {
+        scroll-margin-top: 180px; /* Altura del menú fijo */
+    }
+
+    #home{
+        height: 180px;
+    }
+
+    .row .align-items-center {
+        margin: 0px;
+        padding: 0px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center center;
+        align-content: center;
+    }
+
+    .logo-img {
+        height: 80px;
+        width: 120px;
+    }
+    
+    .logo-text {
+        color: rgb(48, 48, 119);
+        margin: 0;
+        padding: 0px;
+        font-weight: bold;
+        font-size: 2em;
+    
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("\static\logo\barra-de-menu.png");
+        height: 35px;
+        width: 35px;
+        border-radius: 15%;
+
+    }
+
+    .navbar-toggler-icon:hover {
+        background-color: gray;
+
+    }
+
+    /* Seccion Hero*/
+
+    #hero h1 {    
+        margin-top: 50px; /* Reducir el margen superior en pantallas pequeñas */
+        margin-bottom: 10px; /* Reducir el margen inferior */
+    }
+
+    #hero {
+        padding-bottom: 100px; /* Ajusta el padding inferior del carrusel */
+    }
+
+
+    #hero .card {
+        height: 450px; /* Reducir altura de las tarjetas */
+        max-width: 350px; /* Reducir el ancho de las tarjetas en pantallas pequeñas */
+        width: 100%; /* Asegura que las tarjetas ocupen el ancho completo del contenedor */
+        max-width: 400px; /* Ajusta el ancho máximo de las tarjetas */
+        margin: auto;
+    }
+
+    #hero .card-img-top {
+        height: 180px; /* Ajustar la altura de las imágenes */
+    }
+
+    #containerCarusel {
+        margin-top: 20px !important;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Estilo específico para la sección "Nosotros" */
+
+    .textonosotros{
+        text-align: center; /**alinea el texto del contenedor**/
+    }
+
+    #nosotros #myVideo{
+        display: none;
+    }
+
+    /* Estilo específico para la sección "Serie" */
+
+
+
+    /* Estilo específico para la sección "contacto" */
+
+    #contacto .row {
+        justify-content: center; /* Centra los elementos dentro de la fila */
+        text-align: center; /* Asegura que el contenido esté centrado */
+    }
+
+    #contacto .col-md-6 {
+        max-width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
+    }
+
+    #contacto h2 {
+        text-align: left; /* Mantiene el título alineado a la izquierda */
+    }
+
+    #contacto .form-label {
+        text-align: left; /* Mantiene las etiquetas alineadas a la izquierda */
+    }
+
+    /* Ocultar la imagen en resoluciones pequeñas */
+    #contacto .img-fluid {
+        display: none;
+    }
+
+    /* Botones uno al lado del otro */
+    #contacto .row {
+        justify-content: center; /* Centra los elementos dentro de la fila */
+        text-align: center; /* Asegura que el contenido esté centrado */
+    }
+
+    #contacto .col-md-6 {
+        max-width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
+    }
+
+    #contacto h2 {
+        text-align: left; /* Mantiene el título alineado a la izquierda */
+    }
+
+    #contacto .form-label {
+        text-align: left; /* Mantiene las etiquetas alineadas a la izquierda */
+    }
+
+    /* Ocultar la imagen en resoluciones pequeñas */
+    #contacto .img-fluid {
+        display: none;
+    }
+
+    #contacto .d-flex {
+        flex-direction: row; /* Asegura que los botones estén en fila en lugar de columna */
+        justify-content: space-around; /* Distribuye los botones equitativamente */
+    }
+
+    #contacto .btn {
+        width: 100px; /* Mantén el ancho uniforme en pantallas pequeñas */
+    }
+
+    #form-contacto {
+        margin-top: 20px; /* Ajusta este valor según el espacio que necesites */
+    }
+
+    #contacto .container {
+        margin-top: 0;
+        height: auto; /* Elimina la altura fija */
+        padding-top: 10px; /* Ajusta el espaciado superior según sea necesario */
+        padding-bottom: 30px; /* Asegura que haya suficiente espacio para los botones */
+    }
+
+    #ubicacion iframe {
+        height: 300px;
+        width: 100%; /* Asegura que el iframe se ajuste al ancho del contenedor */
+    }
+
+    #ubicacion {
+        height: calc(100vh - 400px);
+    }
+
+    #ubicacion .container{
+        padding-bottom: 150px;
+    }
+
+    footer {
+        height: 150px; /* Ajusta la altura para que se adapte al contenido */
+        padding: 1rem; /* Añade padding para dar espacio interno */
+    }
+
+    footer .row {
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    footer .col {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+
+    footer .d-flex.align-items-center {
+        flex-direction: row; /* Cambia la dirección de los elementos de flexbox a columna */
+        align-items: center; /* Centra los íconos y el texto horizontalmente */
+        margin-bottom: 0.5rem; /* Agrega margen inferior entre los íconos de contacto */
+        height: 40px;
+    }
+
+    footer .text-end {
+        text-align: center; /* Centra el texto de copyright */
+        margin-top: 0.5rem; /* Agrega margen superior para separar del contenido superior */
+    }
+
+    footer .fa {
+        font-size: 1.2rem; /* Tamaño de íconos más pequeño en pantallas pequeñas */
+    }
+
+    /* Estilos para Serie Mobile */
+
+    #serieMobile{
+        background-position: center;
+        background-size: cover;
+    }
+
+    #containerMobile{
+
+    }
+
+    #cardMobile{
+        height: 100%; 
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    #card-bodyMobile{
+        height: 80%; 
+        width: 80%;
+        text-align: center;
+        align-items: center;
+    }
+
+    #card-titleMobile{
+        margin-bottom: 50px;
+        font-size: 2rem;
+        font-weight: bold;
+        color:  rgb(89, 89, 247);
+    }
+
+    #card-textMobile{
+        font-size: 1.5rem;
+    }
+
+    #serieMobile .card .btn {
+        color: white;
+        font-size: 1em;
+        width: 150px;
+        padding: 10px 20px;
+        background-color: rgb(48, 48, 119);
+        border-color: rgb(48, 48, 119);
+        margin-top: auto; 
+    }
+
+    #serieMobile .card .btn:hover {
+        background-color: rgb(89, 89, 247);
+        border-color: rgb(89, 89, 247);
+    }
+}
+
+
+
