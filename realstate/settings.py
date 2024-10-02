@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # *CONFIGURACION PARA DEPLOY EN RENDER*
-SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key') # Aquí se usa la variable de entorno
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # *CONFIGURACION PARA DEPLOY EN RENDER*
@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'realstate.wsgi.application'
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://realestatadb_user:EHyBJ4I2TsZlT89UHbpZjjnvqpJne0zI@dpg-crllckbv2p9s73e0q0ig-a.frankfurt-postgres.render.com/realestatadb',
+        default=os.environ.get('DATABASE_URL'),  # Aquí se usa la variable de entorno
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=True  # Mantén esta línea si tu base de datos requiere SSL
     )
 }
 
@@ -161,12 +161,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # configuracion de email:
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # Configuración del backend de email de Django
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # Backend de email
 EMAIL_HOST = "smtp-mail.outlook.com"  # Host SMTP de Hotmail (Outlook)
-EMAIL_USE_TLS = True  # Utilizar TLS
+EMAIL_USE_TLS = True  # Usar TLS
 EMAIL_PORT = 587  # Puerto SMTP para TLS
-EMAIL_HOST_USER='leo_91_166@hotmail.com' #direccion de correo electronico
-EMAIL_HOST_PASSWORD = os.environ.get('paozgadndgittrdq', 'default_password') #agregamos la contraseña de nuestro correo 
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # Dirección de correo electrónico desde variable de entorno
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # Contraseña de correo electrónico desde variable de entorno
 
 LOGGING = {
     'version': 1,
