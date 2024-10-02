@@ -95,8 +95,8 @@ WSGI_APPLICATION = 'realstate.wsgi.application'
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),  # Aquí se usa la variable de entorno
-        #default='postgresql://realestatadb_user:EHyBJ4I2TsZlT89UHbpZjjnvqpJne0zI@dpg-crllckbv2p9s73e0q0ig-a.oregon-postgres.render.com/realestatadb',
+        #default=os.environ.get('DATABASE_URL'),  # Aquí se usa la variable de entorno
+        default='postgresql://realestatadb_user:EHyBJ4I2TsZlT89UHbpZjjnvqpJne0zI@dpg-crllckbv2p9s73e0q0ig-a.oregon-postgres.render.com/realestatadb',
         conn_max_age=600,
         ssl_require=True  # Mantén esta línea si tu base de datos requiere SSL
     )
