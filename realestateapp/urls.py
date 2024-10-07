@@ -12,6 +12,7 @@ urlpatterns = [
     path('mobileEdificios/', views.mobileEdificios, name='mobileEdificios'),
     path('mobileIndustrias/', views.mobileIndustrias, name='mobileIndustrias'),
     path('test-gcs/', test_gcs_access, name='test_gcs'),
+]
 
 if settings.DEBUG: 
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
