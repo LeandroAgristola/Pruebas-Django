@@ -157,8 +157,6 @@ if not DEBUG:
     # Aquí podrías tener otra configuración relacionada con producción
     pass  # Este bloque puede quedar vacío o puedes agregar configuraciones específicas para producción
 
-th.join(BASE_DIR, 'media')
-    
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
