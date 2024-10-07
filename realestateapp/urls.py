@@ -10,4 +10,5 @@ urlpatterns = [
     path('mobileIndustrias/', views.mobileIndustrias, name='mobileIndustrias'),
 ]
 
-urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT ) #agramos al archivo URL los directorios de MEDIA
+if settings.DEBUG: 
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

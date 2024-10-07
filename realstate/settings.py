@@ -206,14 +206,12 @@ APPEND_SLASH = True
 # Configuración de Google Cloud Storage
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 GS_BUCKET_NAME = os.environ.get('GS_BUCKET_NAME')  # Usa la variable de entorno para el nombre del bucket
+GS_CREDENTIALS = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
 
 # Configuración de Google Cloud Storage
 GS_BUCKET_NAME = os.environ.get('GS_BUCKET_NAME')  # Usa la variable de entorno para el nombre del bucket
 
 # URL pública de los archivos subidos
-if not DEBUG:
-    MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
-else:
-    MEDIA_URL = '/media/'  # Cambia esta línea si deseas manejar archivos multimedia localmente
+MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Esto se mantiene, pero no se utilizará en producción
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Esto se mantiene, pero no se utilizará en producción
