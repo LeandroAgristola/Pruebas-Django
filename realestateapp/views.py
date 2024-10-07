@@ -52,8 +52,9 @@ def mobileIndustrias(request):
     return render(request, 'realestateapp/mobileIndustrias.html')
 
 
-from google.cloud import storage
 from django.http import JsonResponse
+from google.cloud import storage
+import os  # Asegúrate de importar la biblioteca os
 
 def test_gcs_access(request):
     try:
