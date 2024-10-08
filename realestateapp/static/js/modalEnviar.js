@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             var errorElement = document.createElement('div');
                             errorElement.className = 'alert alert-danger';
                             errorMessages.forEach(function(error) {
-                                var errorText = document.createTextNode(error.message);
+                                var errorText = document.createTextNode(error);
                                 errorElement.appendChild(errorText);
                             });
                             fieldElement.parentElement.appendChild(errorElement);
