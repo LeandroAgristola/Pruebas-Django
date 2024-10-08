@@ -51,25 +51,16 @@ def mobileEdificios(request):
 def mobileIndustrias(request):
     return render(request, 'realestateapp/mobileIndustrias.html')
 
-
-from django.http import JsonResponse
 from google.cloud import storage
-import os  # Asegúrate de importar la biblioteca os
+import os
 
-def test_gcs_access(request):
-    try:
-        # Crea un cliente de Google Cloud Storage
-        client = storage.Client()
-        
-        # Accede a tu bucket
-        bucket_name = os.environ.get('GS_BUCKET_NAME')
-        bucket = client.get_bucket(bucket_name)
-        
-        # Lista los objetos en el bucket
-        blobs = bucket.list_blobs()
-        file_list = [blob.name for blob in blobs]
-        
-        return JsonResponse({'status': 'success', 'files': file_list})
+# Configuración
+bucket_name = os.getenv('GS_BUCKET_NAME')  # Nombre del bucket
+client = storage.Client.from_service_account_json('/etc/secrets/claverealestatebucket.json')  # Ruta al archivo JSON
+bucket = client.bucket(bucket_name)
 
-    except Exception as e:
-        return JsonResponse({'status': 'error', 'message': str(e)})
+# Cargar un archivo de prueba
+blob = bucket.blob('desarrollos/test_image.jpg')  # Cambia 'test_image.jpg' por el nombre del archivo que deseas cargar
+blob.upload_from_filename('Mendoza.png')  # Cambia por la ruta de tu archivo local
+
+print(f'Archivo {blob.name} subido a {bucket_name}.')

@@ -11,7 +11,6 @@ urlpatterns = [
     path('mobileViviendas/', views.mobileViviendas, name='mobileViviendas'),
     path('mobileEdificios/', views.mobileEdificios, name='mobileEdificios'),
     path('mobileIndustrias/', views.mobileIndustrias, name='mobileIndustrias'),
-    path('test-gcs/', test_gcs_access, name='test_gcs'),
 ]
 
 if settings.DEBUG: 
