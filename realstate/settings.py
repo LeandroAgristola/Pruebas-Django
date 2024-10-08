@@ -218,16 +218,32 @@ import logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'django.log'),  # Archivo de log
+            'formatter': 'verbose',
         },
     },
     'loggers': {
-        'django.db.backends': {
+        'django': {
+            'handlers': ['console', 'file'],
             'level': 'DEBUG',
-            'handlers': ['console'],
-            'propagate': False,
+            'propagate': True,
         },
     },
 }
