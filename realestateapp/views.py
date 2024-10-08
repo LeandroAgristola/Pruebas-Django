@@ -50,26 +50,3 @@ def mobileEdificios(request):
 
 def mobileIndustrias(request):
     return render(request, 'realestateapp/mobileIndustrias.html')
-
-
-from django.http import JsonResponse
-from google.cloud import storage
-import os  # Asegúrate de importar la biblioteca os
-
-def test_gcs_access(request):
-    try:
-        # Crea un cliente de Google Cloud Storage
-        client = storage.Client()
-        
-        # Accede a tu bucket
-        bucket_name = os.environ.get('GS_BUCKET_NAME')
-        bucket = client.get_bucket(bucket_name)
-        
-        # Lista los objetos en el bucket
-        blobs = bucket.list_blobs()
-        file_list = [blob.name for blob in blobs]
-        
-        return JsonResponse({'status': 'success', 'files': file_list})
-
-    except Exception as e:
-        return JsonResponse({'status': 'error', 'message': str(e)})
