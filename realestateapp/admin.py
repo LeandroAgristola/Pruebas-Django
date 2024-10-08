@@ -1,9 +1,11 @@
 from django.contrib import admin
 from .models import Desarrollo
 
-# Register your models here.
-
+# Clase ModelAdmin personalizada
 class desarrolloAdmin(admin.ModelAdmin):
-    readonly_fields=('created','updated') #especificamos que nos aparezcan estos dos campos cuando agregamos un nuevos servicio
+    readonly_fields = ('created', 'updated')  # Campos que no se pueden editar
+    # Puedes agregar más configuraciones si es necesario
+    list_display = ('titulo', 'contenido', 'created', 'updated')  # Campos a mostrar en la lista
+    search_fields = ('titulo',)  # Campos para buscar
 
-admin.site.register(Desarrollo, desarrolloAdmin) #registramos las dos clase
+admin.site.register(Desarrollo, desarrolloAdmin)  # Registro del modelo

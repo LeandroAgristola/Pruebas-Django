@@ -50,17 +50,3 @@ def mobileEdificios(request):
 
 def mobileIndustrias(request):
     return render(request, 'realestateapp/mobileIndustrias.html')
-
-from google.cloud import storage
-import os
-
-# Configuración
-bucket_name = os.getenv('GS_BUCKET_NAME')  # Nombre del bucket
-client = storage.Client.from_service_account_json('/etc/secrets/claverealestatebucket.json')  # Ruta al archivo JSON
-bucket = client.bucket(bucket_name)
-
-# Cargar un archivo de prueba
-blob = bucket.blob('desarrollos/test_image.jpg')  # Cambia 'test_image.jpg' por el nombre del archivo que deseas cargar
-blob.upload_from_filename('Mendoza.png')  # Cambia por la ruta de tu archivo local
-
-print(f'Archivo {blob.name} subido a {bucket_name}.')

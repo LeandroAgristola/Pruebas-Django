@@ -208,10 +208,42 @@ DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 GS_BUCKET_NAME = os.environ.get('GS_BUCKET_NAME')  # Usa la variable de entorno para el nombre del bucket
 GS_CREDENTIALS = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
 
-# Configuración de Google Cloud Storage
-GS_BUCKET_NAME = os.environ.get('GS_BUCKET_NAME')  # Usa la variable de entorno para el nombre del bucket
-
 # URL pública de los archivos subidos
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
 
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Esto se mantiene, pero no se utilizará en producción
+
+import logging
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'django.log'),  # Archivo de log
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
