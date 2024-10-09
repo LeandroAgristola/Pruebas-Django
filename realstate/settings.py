@@ -203,12 +203,19 @@ LOGIN_REDIRECT_URL = 'home'  # Redirige a 'home' después de iniciar sesión
 
 APPEND_SLASH = True
 
+
+from google.oauth2 import service_account
 # Configuración de Google Cloud Storage
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 GS_BUCKET_NAME = os.environ.get('GS_BUCKET_NAME')  # Usa la variable de entorno para el nombre del bucket
-GS_CREDENTIALS = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
+
+# Cargar las credenciales desde el archivo JSON
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
+)
 
 # URL pública de los archivos subidos
+
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
 
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Esto se mantiene, pero no se utilizará en producción
@@ -218,32 +225,19 @@ import logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {message}',
-            'style': '{',
-        },
-        'simple': {
-            'format': '{levelname} {message}',
-            'style': '{',
-        },
-    },
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
-        },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'django.log'),  # Archivo de log
-            'formatter': 'verbose',
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file'],
+            'handlers': ['console'],
+            'level': 'DEBUG',  # O usa INFO para menos verbosidad
+        },
+        'google.cloud': {
+            'handlers': ['console'],
             'level': 'DEBUG',
-            'propagate': True,
         },
     },
 }
