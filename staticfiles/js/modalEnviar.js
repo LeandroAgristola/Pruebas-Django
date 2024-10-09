@@ -31,16 +31,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadingModal.hide();
 
                 if (data.status === 'ok') {
-                    // Mostrar modal de mensaje enviado
+                    // Mostrar modal de mensaje enviado (Simulación del mensaje enviado)
                     mensajeModal.show();
 
-                    // Limpiar el formulario después de enviar
+                    // Limpiar el formulario después de enviar (Simulación del reseteo)
                     form.reset();
                 } else if (data.status === 'invalid') {
                     console.log('Errores de validación:', data.errors);
                     
                     // Mostrar errores en el formulario
-                    var errors = JSON.parse(data.errors);
+                    var errors = JSON.parse(data.errors); // Parsear errores JSON
                     for (var field in errors) {
                         var errorMessages = errors[field];
                         var fieldElement = document.querySelector('[name=' + field + ']');
@@ -48,17 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
                             var errorElement = document.createElement('div');
                             errorElement.className = 'alert alert-danger';
                             errorMessages.forEach(function(error) {
-                                var errorText = document.createTextNode(error);
+                                var errorText = document.createTextNode(error.message); 
                                 errorElement.appendChild(errorText);
                             });
-                            fieldElement.parentElement.appendChild(errorElement);
+                            fieldElement.parentElement.appendChild(errorElement); // Agregar mensaje de error debajo del campo
                         }
                     }
                 }
             })
             .catch(error => {
                 // Ocultar modal de carga en caso de error
-                loadingModal.hide();
+                loadingModal.hide();  // Comentar en caso de simulación o funcionalidad real
                 console.error('Error al enviar el formulario:', error);
             });
         });
