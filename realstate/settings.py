@@ -211,13 +211,14 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
 )
 
+# Establecer la ubicación de almacenamiento de archivos
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-GS_BUCKET_NAME = 'realestate-bucket-leandro'
+GS_BUCKET_NAME = 'realestate-bucket-leandro'  # Asegúrate de que este sea el nombre correcto del bucket
 GS_BUCKET_ID = os.environ.get('GS_PROJECT_ID') # Usa la variable de entorno para el ID del bucket
 
 GS_FILE_OVERWRITE = False  # Evitar sobreescribir archivos
 GS_DEFAULT_ACL = None  # Evitar que se apliquen ACL predeterminadas
 
 # Configuración para archivos multimedia
-MEDIA_URL = '/media/'
+MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Asegúrate de que el directorio exista
