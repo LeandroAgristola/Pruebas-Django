@@ -212,16 +212,12 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
 )
 
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-
 GS_BUCKET_NAME = 'realestate-bucket-leandro'
-GS_BUCKET_ID = 'lucky-curve-437822-k8'
-
-#GS_BUCKET_NAME = os.environ.get('GS_BUCKET_NAME')  # Usa la variable de entorno para el nombre del bucket
-#GS_BUCKET_ID = os.environ.get('GS_PROJECT_ID') # Usa la variable de entorno para el ID del bucket
+GS_BUCKET_ID = os.environ.get('GS_PROJECT_ID') # Usa la variable de entorno para el ID del bucket
 
 GS_FILE_OVERWRITE = False  # Evitar sobreescribir archivos
 GS_DEFAULT_ACL = None  # Evitar que se apliquen ACL predeterminadas
 
-MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_BUCKET_NAME)
-MEDIA_ROOT= "media/"
-UPLOAD_ROOT = 'media/uploads/'
+# Configuración para archivos multimedia
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Asegúrate de que el directorio exista
